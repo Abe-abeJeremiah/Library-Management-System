@@ -52,7 +52,14 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\BookFunction.cs" />
+    <Compile Include="Model\BookRepository.cs" />
+    <Compile Include="Model\UserFunction.cs" />
+    <Compile Include="Model\LibraryFunction.cs" />
+    <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Register.cs" />
+    <Compile Include="Model\UserRepository.cs" />
+    <Compile Include="Model\Users.cs" />
     <Compile Include="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>

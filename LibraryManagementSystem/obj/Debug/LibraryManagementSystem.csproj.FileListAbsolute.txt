@@ -15,9 +15,10 @@ E:\Library-Management-System\LibraryManagementSystem\bin\Debug\LibraryManagement
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.AssemblyReference.cache
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.exe.config
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.FrmLogin.resources
-E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Form2.resources
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Properties.Resources.resources
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.GenerateResource.cache
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.CoreCompileInputs.cache
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.exe
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
+E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.RegisterForm.resources
+E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.UserInterface.resources
