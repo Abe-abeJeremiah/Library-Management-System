@@ -1,6 +1,6 @@
 ﻿namespace LibraryManagementSystem
 {
-    partial class RegisterForm
+    partial class frmRegister
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegister));
             this.lnkLogin = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.lnkForgotPassword = new System.Windows.Forms.LinkLabel();
@@ -41,10 +41,8 @@
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtRegisterFirstName = new System.Windows.Forms.TextBox();
-            this.txtRegisterLastName = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtConfimPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,12 +56,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lnkLogin.AutoSize = true;
-            this.lnkLogin.Location = new System.Drawing.Point(200, 448);
+            this.lnkLogin.Location = new System.Drawing.Point(214, 448);
             this.lnkLogin.Name = "lnkLogin";
             this.lnkLogin.Size = new System.Drawing.Size(59, 13);
             this.lnkLogin.TabIndex = 26;
             this.lnkLogin.TabStop = true;
             this.lnkLogin.Text = "Login Here";
+            this.lnkLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLogin_LinkClicked);
             // 
             // label1
             // 
@@ -73,9 +72,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(76, 448);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 13);
+            this.label1.Size = new System.Drawing.Size(132, 13);
             this.label1.TabIndex = 25;
-            this.label1.Text = "Dont have an account?";
+            this.label1.Text = "Already have an account?";
             // 
             // lnkForgotPassword
             // 
@@ -133,6 +132,7 @@
             this.txtRegisterPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRegisterPassword.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtRegisterPassword.Location = new System.Drawing.Point(39, 299);
             this.txtRegisterPassword.Name = "txtRegisterPassword";
             this.txtRegisterPassword.Size = new System.Drawing.Size(298, 20);
@@ -143,6 +143,7 @@
             this.txtRegisterEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRegisterEmail.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtRegisterEmail.Location = new System.Drawing.Point(39, 207);
             this.txtRegisterEmail.Name = "txtRegisterEmail";
             this.txtRegisterEmail.Size = new System.Drawing.Size(298, 20);
@@ -199,51 +200,29 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // label3
+            // lblUsername
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 138);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 20);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "First Name";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(35, 138);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(93, 20);
+            this.lblUsername.TabIndex = 27;
+            this.lblUsername.Text = "UserName";
             // 
-            // label4
+            // txtUserName
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(188, 138);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 20);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Last Name";
-            // 
-            // txtRegisterFirstName
-            // 
-            this.txtRegisterFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRegisterFirstName.Location = new System.Drawing.Point(39, 161);
-            this.txtRegisterFirstName.Name = "txtRegisterFirstName";
-            this.txtRegisterFirstName.Size = new System.Drawing.Size(145, 20);
-            this.txtRegisterFirstName.TabIndex = 29;
-            // 
-            // txtRegisterLastName
-            // 
-            this.txtRegisterLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtRegisterLastName.Location = new System.Drawing.Point(192, 161);
-            this.txtRegisterLastName.Name = "txtRegisterLastName";
-            this.txtRegisterLastName.Size = new System.Drawing.Size(145, 20);
-            this.txtRegisterLastName.TabIndex = 30;
+            this.txtUserName.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtUserName.Location = new System.Drawing.Point(39, 161);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(298, 20);
+            this.txtUserName.TabIndex = 29;
             // 
             // label5
             // 
@@ -263,6 +242,7 @@
             this.txtConfimPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtConfimPassword.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtConfimPassword.Location = new System.Drawing.Point(39, 345);
             this.txtConfimPassword.Name = "txtConfimPassword";
             this.txtConfimPassword.Size = new System.Drawing.Size(298, 20);
@@ -283,6 +263,7 @@
             // 
             // listRegisterType
             // 
+            this.listRegisterType.BackColor = System.Drawing.SystemColors.ControlLight;
             this.listRegisterType.FormattingEnabled = true;
             this.listRegisterType.Items.AddRange(new object[] {
             "Student",
@@ -295,20 +276,18 @@
             this.listRegisterType.Size = new System.Drawing.Size(297, 17);
             this.listRegisterType.TabIndex = 35;
             // 
-            // RegisterForm
+            // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(880, 523);
             this.Controls.Add(this.listRegisterType);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtConfimPassword);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtRegisterLastName);
-            this.Controls.Add(this.txtRegisterFirstName);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtUserName);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lnkLogin);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lnkForgotPassword);
@@ -321,7 +300,9 @@
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnRegister);
-            this.Name = "RegisterForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "frmRegister";
+            this.Load += new System.EventHandler(this.RegisterForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -342,10 +323,8 @@
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtRegisterFirstName;
-        private System.Windows.Forms.TextBox txtRegisterLastName;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtConfimPassword;
         private System.Windows.Forms.Label label6;

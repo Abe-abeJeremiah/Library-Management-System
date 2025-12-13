@@ -20,5 +20,5 @@ E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagement
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.CoreCompileInputs.cache
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.exe
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
-E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.RegisterForm.resources
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.UserInterface.resources
+E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.frmRegister.resources

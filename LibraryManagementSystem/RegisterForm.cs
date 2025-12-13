@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace LibraryManagementSystem
 {
-    public partial class RegisterForm : Form
+    public partial class frmRegister : Form
     {
-        public RegisterForm()
+        public frmRegister()
         {
             InitializeComponent();
         }
@@ -24,8 +24,8 @@ namespace LibraryManagementSystem
             Users RegisterUser = new Users
             {
 
-                FirstName = txtRegisterFirstName.Text,
-                LastName = txtRegisterLastName.Text,
+                UserName = txtUserName.Text,
+
                 EmailAddress = txtRegisterEmail.Text,
                 MemberType = listRegisterType.SelectedItem.ToString(),
                 Password = txtRegisterPassword.Text,
@@ -33,6 +33,29 @@ namespace LibraryManagementSystem
                 ExpirationDate = DateTime.Now.AddDays(150) //150 days from registration
 
             };
+        }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "Register Complete!",
+                "Success",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            ); //show if successful register
+
+            FrmLogin login = new FrmLogin();
+            login.Show();
+
+            this.Close();
+        }
+
+        private void lnkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmLogin login = new FrmLogin();
+            login.Show();
+
+            this.Close();
         }
     }
 }

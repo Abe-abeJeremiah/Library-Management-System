@@ -31,5 +31,28 @@ namespace LibraryManagementSystem
         {
 
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            // TODO: Validate username & password here
+
+            UserInterface main = new UserInterface();
+            main.Show();
+
+            this.Hide(); // hide login first
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmRegister register = new frmRegister();
+            register.Show();
+
+            this.Hide();
+        }
     }
 }

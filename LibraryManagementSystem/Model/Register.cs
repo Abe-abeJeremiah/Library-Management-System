@@ -30,7 +30,7 @@ namespace LibraryManagementSystem.Model
                 // Add user to the repository (or database)
                 repo.AddUser(user);
 
-                Console.WriteLine($"Saving User: {user.FirstName} {user.LastName} (ID: {user.UserID})");
+               // Console.WriteLine($"Saving User: {user.FirstName} {user.LastName} (ID: {user.UserID})");
             }
         }
 
