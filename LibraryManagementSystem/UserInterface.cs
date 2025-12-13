@@ -65,7 +65,7 @@ namespace LibraryManagementSystem
             if (btnBooks != null) navigationButtons.Add(btnBooks);
             if (btnFines != null) navigationButtons.Add(btnFines);
             if (btnHistory != null) navigationButtons.Add(btnHistory);
-            if (btnSettings != null) navigationButtons.Add(btnSettings);
+            if (btnEditProfile != null) navigationButtons.Add(btnEditProfile);
         }
 
         // Resets all navigation buttons to the normal color
@@ -158,16 +158,6 @@ namespace LibraryManagementSystem
 
         }
 
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            ActivateButton(btnSettings);
-            lblTitle.Text = "Settings";
-            this.PnlFormLoader.Controls.Clear();
-            frmSettings FrmSettings_vrb = new frmSettings() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FrmSettings_vrb.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FrmSettings_vrb);
-            FrmSettings_vrb.Show();
-        }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -196,6 +186,16 @@ namespace LibraryManagementSystem
         {
 
         }
-  
+
+        private void btnEditProfile_Click(object sender, EventArgs e)
+        {
+            ActivateButton(btnEditProfile);
+            lblTitle.Text = "Settings";
+            this.PnlFormLoader.Controls.Clear();
+            frmEditProfile FrmSettings_vrb = new frmEditProfile() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            FrmSettings_vrb.FormBorderStyle = FormBorderStyle.None;
+            this.PnlFormLoader.Controls.Add(FrmSettings_vrb);
+            FrmSettings_vrb.Show();
+        }
     }
 }

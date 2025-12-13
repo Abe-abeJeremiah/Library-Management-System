@@ -36,6 +36,8 @@
             this.lblPublicationYear = new System.Windows.Forms.Label();
             this.lblPublisher = new System.Windows.Forms.Label();
             this.lblPhysicalDescripton = new System.Windows.Forms.Label();
+            this.lvlAuthor1 = new System.Windows.Forms.Label();
+            this.lblAuthor = new System.Windows.Forms.Label();
             this.lblISBN = new System.Windows.Forms.Label();
             this.lblSubTitle = new System.Windows.Forms.Label();
             this.lblLanguage = new System.Windows.Forms.Label();
@@ -43,9 +45,13 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblAccessionNumber = new System.Windows.Forms.Label();
             this.pctBook = new System.Windows.Forms.PictureBox();
-            this.lblAuthor = new System.Windows.Forms.Label();
-            this.lvlAuthor1 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.btnReserve = new System.Windows.Forms.Button();
+            this.btnBorrow = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,6 +69,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -80,6 +88,8 @@
             this.label30 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -96,8 +106,6 @@
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
             this.pnlBookDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBook)).BeginInit();
             this.panel1.SuspendLayout();
@@ -111,6 +119,8 @@
             // pnlBookDetails
             // 
             this.pnlBookDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.pnlBookDetails.Controls.Add(this.btnBorrow);
+            this.pnlBookDetails.Controls.Add(this.btnReserve);
             this.pnlBookDetails.Controls.Add(this.lblLocation);
             this.pnlBookDetails.Controls.Add(this.lblNumberPages);
             this.pnlBookDetails.Controls.Add(this.lblEdition);
@@ -161,7 +171,7 @@
             this.lblEdition.AutoSize = true;
             this.lblEdition.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEdition.ForeColor = System.Drawing.Color.White;
-            this.lblEdition.Location = new System.Drawing.Point(252, 247);
+            this.lblEdition.Location = new System.Drawing.Point(252, 222);
             this.lblEdition.Name = "lblEdition";
             this.lblEdition.Size = new System.Drawing.Size(52, 17);
             this.lblEdition.TabIndex = 1;
@@ -185,7 +195,7 @@
             this.lblPublicationYear.AutoSize = true;
             this.lblPublicationYear.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPublicationYear.ForeColor = System.Drawing.Color.White;
-            this.lblPublicationYear.Location = new System.Drawing.Point(116, 247);
+            this.lblPublicationYear.Location = new System.Drawing.Point(115, 222);
             this.lblPublicationYear.Name = "lblPublicationYear";
             this.lblPublicationYear.Size = new System.Drawing.Size(108, 17);
             this.lblPublicationYear.TabIndex = 1;
@@ -197,7 +207,7 @@
             this.lblPublisher.AutoSize = true;
             this.lblPublisher.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPublisher.ForeColor = System.Drawing.Color.White;
-            this.lblPublisher.Location = new System.Drawing.Point(20, 247);
+            this.lblPublisher.Location = new System.Drawing.Point(20, 222);
             this.lblPublisher.Name = "lblPublisher";
             this.lblPublisher.Size = new System.Drawing.Size(66, 17);
             this.lblPublisher.TabIndex = 1;
@@ -215,6 +225,30 @@
             this.lblPhysicalDescripton.TabIndex = 1;
             this.lblPhysicalDescripton.Text = "Physical description...";
             this.lblPhysicalDescripton.Click += new System.EventHandler(this.lblUserName_Click);
+            // 
+            // lvlAuthor1
+            // 
+            this.lvlAuthor1.AutoSize = true;
+            this.lvlAuthor1.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvlAuthor1.ForeColor = System.Drawing.Color.White;
+            this.lvlAuthor1.Location = new System.Drawing.Point(34, 97);
+            this.lvlAuthor1.Name = "lvlAuthor1";
+            this.lvlAuthor1.Size = new System.Drawing.Size(59, 20);
+            this.lvlAuthor1.TabIndex = 1;
+            this.lvlAuthor1.Text = "Author";
+            this.lvlAuthor1.Click += new System.EventHandler(this.lblUserName_Click);
+            // 
+            // lblAuthor
+            // 
+            this.lblAuthor.AutoSize = true;
+            this.lblAuthor.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAuthor.ForeColor = System.Drawing.Color.White;
+            this.lblAuthor.Location = new System.Drawing.Point(125, 80);
+            this.lblAuthor.Name = "lblAuthor";
+            this.lblAuthor.Size = new System.Drawing.Size(59, 20);
+            this.lblAuthor.TabIndex = 1;
+            this.lblAuthor.Text = "Author";
+            this.lblAuthor.Click += new System.EventHandler(this.lblUserName_Click);
             // 
             // lblISBN
             // 
@@ -295,33 +329,55 @@
             this.pctBook.TabIndex = 0;
             this.pctBook.TabStop = false;
             // 
-            // lblAuthor
+            // label46
             // 
-            this.lblAuthor.AutoSize = true;
-            this.lblAuthor.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuthor.ForeColor = System.Drawing.Color.White;
-            this.lblAuthor.Location = new System.Drawing.Point(125, 80);
-            this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(59, 20);
-            this.lblAuthor.TabIndex = 1;
-            this.lblAuthor.Text = "Author";
-            this.lblAuthor.Click += new System.EventHandler(this.lblUserName_Click);
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Nirmala UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.White;
+            this.label46.Location = new System.Drawing.Point(46, 11);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(286, 17);
+            this.label46.TabIndex = 1;
+            this.label46.Text = "idk make this panel below duplicate , e code ata?";
+            this.label46.Click += new System.EventHandler(this.lblUserName_Click);
             // 
-            // lvlAuthor1
+            // label47
             // 
-            this.lvlAuthor1.AutoSize = true;
-            this.lvlAuthor1.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvlAuthor1.ForeColor = System.Drawing.Color.White;
-            this.lvlAuthor1.Location = new System.Drawing.Point(34, 97);
-            this.lvlAuthor1.Name = "lvlAuthor1";
-            this.lvlAuthor1.Size = new System.Drawing.Size(59, 20);
-            this.lvlAuthor1.TabIndex = 1;
-            this.lvlAuthor1.Text = "Author";
-            this.lvlAuthor1.Click += new System.EventHandler(this.lblUserName_Click);
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Nirmala UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.ForeColor = System.Drawing.Color.White;
+            this.label47.Location = new System.Drawing.Point(383, 9);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(253, 17);
+            this.label47.TabIndex = 1;
+            this.label47.Text = "ing ani result, mag side to side sila tas baba";
+            this.label47.Click += new System.EventHandler(this.lblUserName_Click);
+            // 
+            // btnReserve
+            // 
+            this.btnReserve.ForeColor = System.Drawing.Color.Black;
+            this.btnReserve.Location = new System.Drawing.Point(32, 248);
+            this.btnReserve.Name = "btnReserve";
+            this.btnReserve.Size = new System.Drawing.Size(120, 23);
+            this.btnReserve.TabIndex = 3;
+            this.btnReserve.Text = "Reserve This";
+            this.btnReserve.UseVisualStyleBackColor = true;
+            // 
+            // btnBorrow
+            // 
+            this.btnBorrow.ForeColor = System.Drawing.Color.Black;
+            this.btnBorrow.Location = new System.Drawing.Point(184, 248);
+            this.btnBorrow.Name = "btnBorrow";
+            this.btnBorrow.Size = new System.Drawing.Size(120, 23);
+            this.btnBorrow.TabIndex = 3;
+            this.btnBorrow.Text = "Borrow";
+            this.btnBorrow.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
@@ -342,6 +398,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(334, 281);
             this.panel1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(184, 248);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Borrow";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(32, 248);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Reserve This";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -372,7 +448,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(252, 247);
+            this.label3.Location = new System.Drawing.Point(252, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 1;
@@ -396,7 +472,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(116, 247);
+            this.label5.Location = new System.Drawing.Point(115, 222);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 17);
             this.label5.TabIndex = 1;
@@ -408,7 +484,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(20, 247);
+            this.label6.Location = new System.Drawing.Point(20, 222);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 17);
             this.label6.TabIndex = 1;
@@ -533,6 +609,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label18);
@@ -553,6 +631,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(334, 281);
             this.panel2.TabIndex = 2;
+            // 
+            // button3
+            // 
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(184, 248);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(120, 23);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Borrow";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(32, 248);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(120, 23);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Reserve This";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // label16
             // 
@@ -583,7 +681,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(252, 247);
+            this.label18.Location = new System.Drawing.Point(252, 222);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(52, 17);
             this.label18.TabIndex = 1;
@@ -607,7 +705,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(116, 247);
+            this.label20.Location = new System.Drawing.Point(115, 222);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(108, 17);
             this.label20.TabIndex = 1;
@@ -619,7 +717,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(20, 247);
+            this.label21.Location = new System.Drawing.Point(20, 222);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(66, 17);
             this.label21.TabIndex = 1;
@@ -744,6 +842,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.button5);
+            this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.label31);
             this.panel3.Controls.Add(this.label32);
             this.panel3.Controls.Add(this.label33);
@@ -764,6 +864,26 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(334, 281);
             this.panel3.TabIndex = 2;
+            // 
+            // button5
+            // 
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(184, 248);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(120, 23);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Borrow";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(32, 248);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(120, 23);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "Reserve This";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // label31
             // 
@@ -794,7 +914,7 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(252, 247);
+            this.label33.Location = new System.Drawing.Point(252, 222);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(52, 17);
             this.label33.TabIndex = 1;
@@ -818,7 +938,7 @@
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.White;
-            this.label35.Location = new System.Drawing.Point(116, 247);
+            this.label35.Location = new System.Drawing.Point(115, 222);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(108, 17);
             this.label35.TabIndex = 1;
@@ -830,7 +950,7 @@
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.Location = new System.Drawing.Point(20, 247);
+            this.label36.Location = new System.Drawing.Point(20, 222);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(66, 17);
             this.label36.TabIndex = 1;
@@ -952,39 +1072,15 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Nirmala UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.ForeColor = System.Drawing.Color.White;
-            this.label46.Location = new System.Drawing.Point(46, 11);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(286, 17);
-            this.label46.TabIndex = 1;
-            this.label46.Text = "idk make this panel below duplicate , e code ata?";
-            this.label46.Click += new System.EventHandler(this.lblUserName_Click);
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Nirmala UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.Color.White;
-            this.label47.Location = new System.Drawing.Point(383, 9);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(253, 17);
-            this.label47.TabIndex = 1;
-            this.label47.Text = "ing ani result, mag side to side sila tas baba";
-            this.label47.Click += new System.EventHandler(this.lblUserName_Click);
-            // 
             // frmBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(749, 613);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.label47);
             this.Controls.Add(this.label46);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlBookDetails);
@@ -1026,7 +1122,13 @@
         private System.Windows.Forms.PictureBox pctBook;
         private System.Windows.Forms.Label lblAuthor;
         private System.Windows.Forms.Label lvlAuthor1;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Button btnBorrow;
+        private System.Windows.Forms.Button btnReserve;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -1044,6 +1146,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
@@ -1061,6 +1165,8 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
@@ -1077,7 +1183,5 @@
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label47;
     }
 }

@@ -26,4 +26,4 @@ E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagement
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.UserInterface_Forms.frmDashboard.resources
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.UserInterface_Forms.frmFines.resources
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.UserInterface_Forms.frmHistory.resources
-E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.UserInterface_Forms.frmSettings.resources
+E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.UserInterface_Forms.frmEditProfile.resources

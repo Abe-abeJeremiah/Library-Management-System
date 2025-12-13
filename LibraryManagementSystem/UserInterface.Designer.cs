@@ -30,7 +30,7 @@
         {
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnEditProfile = new System.Windows.Forms.Button();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnFines = new System.Windows.Forms.Button();
             this.btnBooks = new System.Windows.Forms.Button();
@@ -38,11 +38,11 @@
             this.PanelUser = new System.Windows.Forms.Panel();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.txtSearchBox = new System.Windows.Forms.TextBox();
             this.btnX = new System.Windows.Forms.Button();
             this.PnlFormLoader = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlNav.SuspendLayout();
             this.PanelUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,7 +52,7 @@
             // 
             this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.pnlNav.Controls.Add(this.btnLogout);
-            this.pnlNav.Controls.Add(this.btnSettings);
+            this.pnlNav.Controls.Add(this.btnEditProfile);
             this.pnlNav.Controls.Add(this.btnHistory);
             this.pnlNav.Controls.Add(this.btnFines);
             this.pnlNav.Controls.Add(this.btnBooks);
@@ -81,20 +81,20 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // btnSettings
+            // btnEditProfile
             // 
-            this.btnSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnSettings.Location = new System.Drawing.Point(0, 344);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(186, 50);
-            this.btnSettings.TabIndex = 1;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnEditProfile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEditProfile.FlatAppearance.BorderSize = 0;
+            this.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditProfile.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnEditProfile.Location = new System.Drawing.Point(0, 344);
+            this.btnEditProfile.Name = "btnEditProfile";
+            this.btnEditProfile.Size = new System.Drawing.Size(186, 50);
+            this.btnEditProfile.TabIndex = 1;
+            this.btnEditProfile.Text = "Edit Profile";
+            this.btnEditProfile.UseVisualStyleBackColor = true;
+            this.btnEditProfile.Click += new System.EventHandler(this.btnEditProfile_Click);
             // 
             // btnHistory
             // 
@@ -190,6 +190,16 @@
             this.lblUserName.Text = "User Name";
             this.lblUserName.Click += new System.EventHandler(this.label1_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LibraryManagementSystem.Properties.Resources.Screenshot__354_;
+            this.pictureBox1.Location = new System.Drawing.Point(60, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(63, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -237,16 +247,6 @@
             this.PnlFormLoader.Size = new System.Drawing.Size(749, 613);
             this.PnlFormLoader.TabIndex = 4;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LibraryManagementSystem.Properties.Resources.Screenshot__354_;
-            this.pictureBox1.Location = new System.Drawing.Point(60, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // UserInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,7 +282,7 @@
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnEditProfile;
         private System.Windows.Forms.Button btnHistory;
         private System.Windows.Forms.Button btnBooks;
         private System.Windows.Forms.Button btnFines;

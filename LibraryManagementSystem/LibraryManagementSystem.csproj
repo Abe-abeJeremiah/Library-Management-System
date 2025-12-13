@@ -95,11 +95,11 @@
     <Compile Include="UserInterface Forms\frmHistory.Designer.cs">
       <DependentUpon>frmHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserInterface Forms\frmSettings.cs">
+    <Compile Include="UserInterface Forms\frmEditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserInterface Forms\frmSettings.Designer.cs">
-      <DependentUpon>frmSettings.cs</DependentUpon>
+    <Compile Include="UserInterface Forms\frmEditProfile.Designer.cs">
+      <DependentUpon>frmEditProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="UserInterface.cs">
       <SubType>Form</SubType>
@@ -135,8 +135,8 @@
     <EmbeddedResource Include="UserInterface Forms\frmHistory.resx">
       <DependentUpon>frmHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserInterface Forms\frmSettings.resx">
-      <DependentUpon>frmSettings.cs</DependentUpon>
+    <EmbeddedResource Include="UserInterface Forms\frmEditProfile.resx">
+      <DependentUpon>frmEditProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInterface.resx">
       <DependentUpon>UserInterface.cs</DependentUpon>
