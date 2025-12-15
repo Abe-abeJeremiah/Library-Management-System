@@ -118,7 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="487391276_8614531771983355_5210645756945235689_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\487391276_8614531771983355_5210645756945235689_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="577005056_1609873480456710_3491264102413289201_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\577005056_1609873480456710_3491264102413289201_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="my-university-library-3-1442034" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\my-university-library-3-1442034.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Screenshot (354)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screenshot (354).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="480502073_682940214057415_800627175507570884_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\480502073_682940214057415_800627175507570884_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="83394854_2290002847769169_2290997278661410816_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\83394854_2290002847769169_2290997278661410816_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

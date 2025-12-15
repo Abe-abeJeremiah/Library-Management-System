@@ -63,6 +63,56 @@ namespace LibraryManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _480502073_682940214057415_800627175507570884_n {
+            get {
+                object obj = ResourceManager.GetObject("480502073_682940214057415_800627175507570884_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _487391276_8614531771983355_5210645756945235689_n {
+            get {
+                object obj = ResourceManager.GetObject("487391276_8614531771983355_5210645756945235689_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _577005056_1609873480456710_3491264102413289201_n {
+            get {
+                object obj = ResourceManager.GetObject("577005056_1609873480456710_3491264102413289201_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _83394854_2290002847769169_2290997278661410816_n {
+            get {
+                object obj = ResourceManager.GetObject("83394854_2290002847769169_2290997278661410816_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap my_university_library_3_1442034 {
+            get {
+                object obj = ResourceManager.GetObject("my-university-library-3-1442034", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Screenshot__354_ {
             get {
                 object obj = ResourceManager.GetObject("Screenshot (354)", resourceCulture);

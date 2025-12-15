@@ -57,8 +57,6 @@ namespace LibraryManagementSystem
             childForm.Show();
         }
 
-        // ... rest of the code including ButtonChecker()
-
         private void ButtonChecker()
         {
             if (btnDashboard != null) navigationButtons.Add(btnDashboard);
@@ -196,6 +194,11 @@ namespace LibraryManagementSystem
             FrmSettings_vrb.FormBorderStyle = FormBorderStyle.None;
             this.PnlFormLoader.Controls.Add(FrmSettings_vrb);
             FrmSettings_vrb.Show();
+        }
+
+        private void PnlFormLoader_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

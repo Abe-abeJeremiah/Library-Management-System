@@ -49,6 +49,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Index Forms\AboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Index Forms\AboutUs.Designer.cs">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Index Forms\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Index Forms\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IndexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IndexForm.Designer.cs">
+      <DependentUpon>IndexForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +125,15 @@
     <Compile Include="UserInterface.Designer.cs">
       <DependentUpon>UserInterface.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Index Forms\AboutUs.resx">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Index Forms\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IndexForm.resx">
+      <DependentUpon>IndexForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,9 +181,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Screenshot %28354%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\my-university-library-3-1442034.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\480502073_682940214057415_800627175507570884_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\487391276_8614531771983355_5210645756945235689_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\577005056_1609873480456710_3491264102413289201_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\83394854_2290002847769169_2290997278661410816_n.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

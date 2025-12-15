@@ -102,7 +102,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::LibraryManagementSystem.Properties.Resources.Screenshot__354_;
+            this.pictureBox1.Image = null;
             this.pictureBox1.Location = new System.Drawing.Point(131, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(63, 63);
@@ -193,7 +193,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::LibraryManagementSystem.Properties.Resources.Screenshot__354_;
+            this.pictureBox2.Image = null;
             this.pictureBox2.Location = new System.Drawing.Point(131, 21);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(63, 63);
@@ -260,7 +260,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::LibraryManagementSystem.Properties.Resources.Screenshot__354_;
+            this.pictureBox3.Image = null;
             this.pictureBox3.Location = new System.Drawing.Point(131, 21);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(63, 63);
@@ -270,7 +270,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::LibraryManagementSystem.Properties.Resources.Screenshot__354_;
+            this.pictureBox4.Image = null;
             this.pictureBox4.Location = new System.Drawing.Point(28, 155);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(664, 182);
