@@ -71,21 +71,7 @@ namespace LibraryManagementSystem
             frmAboutUs.Show();
         }
 
-        private void btnLogin_Click_1(object sender, EventArgs e)
-        {
-            FrmLogin login = new FrmLogin();
-            login.Show();
-
-            this.Hide();
-        }
-
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            frmRegister register = new frmRegister();
-            register.Show();
-
-            this.Hide();
-        }
+      
 
         private void IndexForm_Load(object sender, EventArgs e)
         {

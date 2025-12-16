@@ -16,5 +16,21 @@ namespace LibraryManagementSystem.Index_Forms
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            FrmLogin login = new FrmLogin();
+            login.Show();
+
+            this.Hide();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            frmRegister register = new frmRegister();
+            register.Show();
+
+            this.Hide();
+        }
     }
 }

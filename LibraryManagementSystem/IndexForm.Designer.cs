@@ -32,8 +32,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAboutUs = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
@@ -75,8 +73,6 @@
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.pnlTop.Controls.Add(this.label4);
-            this.pnlTop.Controls.Add(this.btnRegister);
-            this.pnlTop.Controls.Add(this.btnLogin);
             this.pnlTop.Controls.Add(this.label3);
             this.pnlTop.Controls.Add(this.btnAboutUs);
             this.pnlTop.Controls.Add(this.btnHome);
@@ -96,34 +92,6 @@
             this.label4.Size = new System.Drawing.Size(128, 33);
             this.label4.TabIndex = 7;
             this.label4.Text = " System";
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.FlatAppearance.BorderSize = 0;
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(771, 34);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(88, 41);
-            this.btnRegister.TabIndex = 8;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(677, 34);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(88, 41);
-            this.btnLogin.TabIndex = 8;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             // 
             // label3
             // 
@@ -202,8 +170,6 @@
         private System.Windows.Forms.Panel pnlTop;
         private System.Windows.Forms.Button btnAboutUs;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel pnlIndex;
