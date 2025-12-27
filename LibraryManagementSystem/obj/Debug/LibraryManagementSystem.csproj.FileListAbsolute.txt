@@ -9,10 +9,8 @@ E:\Library Management System\LibraryManagementSystem\obj\Debug\LibraryManagement
 E:\Library Management System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.exe
 E:\Library Management System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
 E:\Library Management System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.exe.config
-E:\Library-Management-System\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.exe.config
-E:\Library-Management-System\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.exe
-E:\Library-Management-System\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.pdb
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.AssemblyReference.cache
+E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Index_Forms.frmAboutUs.resources
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Index_Forms.frmHome.resources
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.IndexForm.resources
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.FrmLogin.resources
@@ -26,7 +24,3 @@ E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagement
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.UserInterface.resources
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.GenerateResource.cache
 E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.CoreCompileInputs.cache
-E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.exe
-E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
-E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.exe.config
-E:\Library-Management-System\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Index_Forms.frmAboutUs.resources
