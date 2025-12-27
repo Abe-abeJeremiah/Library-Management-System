@@ -115,9 +115,11 @@ namespace LibraryManagementSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtboxPasswordCredentials.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtboxPasswordCredentials.Location = new System.Drawing.Point(57, 274);
+            this.txtboxPasswordCredentials.MaxLength = 5;
             this.txtboxPasswordCredentials.Name = "txtboxPasswordCredentials";
             this.txtboxPasswordCredentials.Size = new System.Drawing.Size(335, 20);
             this.txtboxPasswordCredentials.TabIndex = 6;
+            this.txtboxPasswordCredentials.Visible = false;
             this.txtboxPasswordCredentials.TextChanged += new System.EventHandler(this.txtboxPasswordCredentials_TextChanged);
             // 
             // lbl2

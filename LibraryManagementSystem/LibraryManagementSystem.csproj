@@ -83,6 +83,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminInterface.Designer.cs">
+      <DependentUpon>AdminInterface.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database\Connection.cs" />
     <Compile Include="Index Forms\AboutUs.cs">
       <SubType>Form</SubType>
@@ -124,6 +130,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInterface Forms\frmBookControler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface Forms\frmBookControler.Designer.cs">
+      <DependentUpon>frmBookControler.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserInterface Forms\frmBooks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +172,9 @@
     <Compile Include="UserInterface.Designer.cs">
       <DependentUpon>UserInterface.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminInterface.resx">
+      <DependentUpon>AdminInterface.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Index Forms\AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +200,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserInterface Forms\frmBookControler.resx">
+      <DependentUpon>frmBookControler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserInterface Forms\frmBooks.resx">
       <DependentUpon>frmBooks.cs</DependentUpon>
     </EmbeddedResource>

@@ -44,8 +44,8 @@ namespace LibraryManagementSystem
             this.label5 = new System.Windows.Forms.Label();
             this.txtConfimPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbxRegisterType = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -247,18 +247,6 @@ namespace LibraryManagementSystem
             this.label6.TabIndex = 33;
             this.label6.Text = "Member Type";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Location = new System.Drawing.Point(435, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(445, 523);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.UseWaitCursor = true;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // cmbxRegisterType
             // 
             this.cmbxRegisterType.FormattingEnabled = true;
@@ -272,6 +260,21 @@ namespace LibraryManagementSystem
             this.cmbxRegisterType.Size = new System.Drawing.Size(343, 21);
             this.cmbxRegisterType.TabIndex = 36;
             this.cmbxRegisterType.SelectedIndexChanged += new System.EventHandler(this.cmbxRegisterType_SelectedIndexChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.ErrorImage = global::LibraryManagementSystem.Properties.Resources.my_university_library_3_1442034;
+            this.pictureBox1.InitialImage = global::LibraryManagementSystem.Properties.Resources.my_university_library_3_1442034;
+            this.pictureBox1.Location = new System.Drawing.Point(429, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(451, 523);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.UseWaitCursor = true;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmRegister
             // 

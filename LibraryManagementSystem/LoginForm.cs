@@ -15,7 +15,8 @@ namespace LibraryManagementSystem
 {
     public partial class FrmLogin : Form
     {
-        string cs = ConfigurationManager.ConnectionStrings["LMSdb"].ConnectionString;
+        string cs = con.
+            ConfigurationManager.ConnectionStrings["LMSdb"].ConnectionString;
 
         public FrmLogin()
         {

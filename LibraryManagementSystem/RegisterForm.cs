@@ -15,6 +15,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace LibraryManagementSystem
 {
     public partial class frmRegister : Form
@@ -76,9 +77,9 @@ namespace LibraryManagementSystem
             }
 
             // ===== PASSWORD VALIDATION =====
-            if (password.Length < 8)
+            if (password.Length < 5)
             {
-                MessageBox.Show("Password must be at least 8 characters long");
+                MessageBox.Show("Password must be at least 5 characters long");
                 return;
             }
 
