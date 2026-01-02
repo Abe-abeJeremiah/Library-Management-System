@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryManagementSystem.Model;
 
 namespace LibraryManagementSystem.UserInterface_Forms
 {
@@ -36,16 +37,13 @@ namespace LibraryManagementSystem.UserInterface_Forms
             int col = 0;
             int row = 0;
 
-            // SAMPLE LOOP (replace with SQL later)
-            for (int i = 0; i < 6; i++)
+            BookRepository repo = new BookRepository();
+            List<LibraryBook> books = repo.GetAllBooks(); // DB data
+
+            foreach (LibraryBook book in books)
             {
                 frmBookControler bookCard = new frmBookControler();
-
-                bookCard.SetData(
-                    $"Book Title {i + 1}",
-                    $"Author {i + 1}",
-                    $"ISBN-{i + 1000}"
-                );
+                bookCard.SetData(book);   // ✅ THIS IS THE FIX
 
                 bookCard.Dock = DockStyle.Fill;
 

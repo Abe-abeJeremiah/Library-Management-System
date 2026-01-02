@@ -9,6 +9,7 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryManagementSystem.Model;
 
 namespace LibraryManagementSystem.UserInterface_Forms
 {
@@ -23,39 +24,40 @@ namespace LibraryManagementSystem.UserInterface_Forms
         {
 
         }
-        public void SetData(string title, string author, string isbn)
+        public void SetData(Book book)
         {
-            lblTitle.Text = title;
-            lblSubTitle.Text = subtitle;
-            lblAuthor.Text = author;
-            lblPages.Text = pages.ToString(); // Assuming 'pages' is an integer
-            lblISBN.Text = isbn;
-            lblLocation.Text = location;
-            lblEditor.Text = editor;
-            lblAccessionNumber.Text = accessionNumber;
-            lblPhysicalDescripton.Text = physicalDescription;
-            lblPublisher.Text = publisher;
-            lblPublicationYear.Text = publicationYear.ToString(); // Assuming it's an integer or DateTime
-            lblEdition.Text = edition;
-            lblLanguage.Text = language;
+            if (book == null) return;
 
-            // Set the image for the book
-            // Assuming you have the image data from SQL as a byte array (e.g., 'imageData')
-            if (imageData != null && imageData.Length > 0)
+            lblTitle.Text = book.Title;
+            lblSubTitle.Text = book.SubTitle;
+            lblAuthor.Text = book.Author;
+            lblPages.Text = book.Pages.ToString();
+            lblISBN.Text = book.ISBN;
+            lblLocation.Text = book.Location;
+            lblEditor.Text = book.Editor;
+            lblAccessionNumber.Text = book.AccessionNumber;
+            lblPhysicalDescripton.Text = book.PhysicalDescription;
+            lblPublisher.Text = book.Publisher;
+            lblPublicationYear.Text = book.PublicationYear.ToString();
+            lblEdition.Text = book.Edition;
+            lblLanguage.Text = book.Language;
+
+            // Book image (optional)
+            if (book.CoverImage != null && book.CoverImage.Length > 0)
             {
-                using (MemoryStream ms = new MemoryStream(imageData))
+                using (MemoryStream ms = new MemoryStream(book.CoverImage))
                 {
                     pctBook.Image = Image.FromStream(ms);
                 }
             }
             else
             {
-                pctBook.Image = null; // Set a default image or handle if no image is available
+                pctBook.Image = null; // or default image
             }
+        }
 
-
-
-
+        private void pnlBookDetails_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

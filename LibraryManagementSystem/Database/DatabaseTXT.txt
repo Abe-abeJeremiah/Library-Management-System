@@ -1,0 +1,145 @@
+/* ================================
+   CREATE DATABASE
+================================ */
+/* CREATE DATABASE LibraryDb;*/
+GO
+USE LibraryDb;
+GO
+
+/* ================================
+   USERS TABLE
+================================ */
+CREATE TABLE Users (
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
+    UserName VARCHAR(100) NOT NULL,
+    EmailAddress VARCHAR(150) UNIQUE NOT NULL,
+    MemberType VARCHAR(20) NOT NULL,
+    PasswordHash VARCHAR(255) NOT NULL,
+    ExpirationDate DATE NOT NULL,
+    RegistrationDate DATE DEFAULT GETDATE()
+);
+GO
+
+CREATE INDEX idx_users_membertype ON Users(MemberType);
+GO
+
+/* ================================
+   BOOKS TABLE
+================================ */
+CREATE TABLE Books (
+    BookID INT IDENTITY(1,1) PRIMARY KEY,
+    Title VARCHAR(200) NOT NULL,
+    SubTitle VARCHAR(200),
+    Author VARCHAR(150) NOT NULL,
+    Pages INT,
+    ISBN VARCHAR(30) UNIQUE,
+    Location VARCHAR(100),
+    Editor VARCHAR(150),
+    AccessionNumber VARCHAR(50) UNIQUE,
+    PhysicalDescription VARCHAR(255),
+    Publisher VARCHAR(150),
+    PublicationYear INT,
+    Edition VARCHAR(50),
+    Language VARCHAR(50),
+    AvailableCopies INT DEFAULT 1
+);
+GO
+
+CREATE INDEX idx_books_title ON Books(Title);
+CREATE INDEX idx_books_author ON Books(Author);
+GO
+
+/* ================================
+   BOOK BORROW
+================================ */
+CREATE TABLE BookBorrow (
+    BorrowID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT NOT NULL,
+    BookID INT NOT NULL,
+    BorrowDate DATE NOT NULL,
+    DueDate DATE NOT NULL,
+    Status VARCHAR(20) DEFAULT 'Borrowed',
+
+    CONSTRAINT fk_borrow_user FOREIGN KEY (UserID)
+        REFERENCES Users(UserID),
+
+    CONSTRAINT fk_borrow_book FOREIGN KEY (BookID)
+        REFERENCES Books(BookID)
+);
+GO
+
+CREATE INDEX idx_borrow_user ON BookBorrow(UserID);
+CREATE INDEX idx_borrow_book ON BookBorrow(BookID);
+CREATE INDEX idx_borrow_status ON BookBorrow(Status);
+GO
+
+/* ================================
+   BOOK RETURN
+================================ */
+CREATE TABLE BookReturn (
+    ReturnID INT IDENTITY(1,1) PRIMARY KEY,
+    BorrowID INT NOT NULL,
+    ReturnDate DATE NOT NULL,
+
+    CONSTRAINT fk_return_borrow FOREIGN KEY (BorrowID)
+        REFERENCES BookBorrow(BorrowID)
+);
+GO
+
+/* ================================
+   BOOK RESERVATION
+================================ */
+CREATE TABLE BookReservation (
+    ReservationID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT NOT NULL,
+    BookID INT NOT NULL,
+    ReservationDate DATE DEFAULT GETDATE(),
+    Status VARCHAR(20) DEFAULT 'Reserved',
+
+    CONSTRAINT fk_res_user FOREIGN KEY (UserID)
+        REFERENCES Users(UserID),
+
+    CONSTRAINT fk_res_book FOREIGN KEY (BookID)
+        REFERENCES Books(BookID),
+
+    CONSTRAINT uq_book_reserved UNIQUE (BookID)
+);
+GO
+
+/* ================================
+   VIEW: BOOK AVAILABILITY
+================================ */
+GO
+CREATE VIEW vw_BookAvailability AS
+SELECT
+    BookID,
+    Title,
+    AvailableCopies,
+    CASE
+        WHEN AvailableCopies > 0 THEN 'Can Reserve'
+        ELSE 'Cannot Reserve'
+    END AS ReservationStatus
+FROM Books;
+GO
+
+/* ================================
+   VIEW: LATE FEES
+================================ */
+GO
+CREATE VIEW vw_LateFees AS
+SELECT
+    u.UserID,
+    b.BorrowID,
+    DATEDIFF(DAY, b.DueDate, r.ReturnDate) AS LateDays,
+    CASE u.MemberType
+        WHEN 'Faculty' THEN DATEDIFF(DAY, b.DueDate, r.ReturnDate) * 10
+        WHEN 'Staff'   THEN DATEDIFF(DAY, b.DueDate, r.ReturnDate) * 10
+        WHEN 'Student' THEN DATEDIFF(DAY, b.DueDate, r.ReturnDate) * 10
+        WHEN 'Guest'   THEN DATEDIFF(DAY, b.DueDate, r.ReturnDate) * 10
+        ELSE 0
+    END AS LateFee
+FROM BookBorrow b
+JOIN BookReturn r ON b.BorrowID = r.BorrowID
+JOIN Users u ON b.UserID = u.UserID
+WHERE r.ReturnDate > b.DueDate;
+GO

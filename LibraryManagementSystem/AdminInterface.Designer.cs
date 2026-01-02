@@ -38,9 +38,10 @@
             this.PanelUser = new System.Windows.Forms.Panel();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlFormLoader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnRervation = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlNav.SuspendLayout();
             this.PanelUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,6 +50,7 @@
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.pnlNav.Controls.Add(this.btnRervation);
             this.pnlNav.Controls.Add(this.btnLogout);
             this.pnlNav.Controls.Add(this.btnEditProfile);
             this.pnlNav.Controls.Add(this.btnHistory);
@@ -186,16 +188,6 @@
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "User Name";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LibraryManagementSystem.Properties.Resources.Screenshot__354_;
-            this.pictureBox1.Location = new System.Drawing.Point(60, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // PnlFormLoader
             // 
             this.PnlFormLoader.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -203,6 +195,7 @@
             this.PnlFormLoader.Name = "PnlFormLoader";
             this.PnlFormLoader.Size = new System.Drawing.Size(749, 613);
             this.PnlFormLoader.TabIndex = 6;
+            this.PnlFormLoader.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblTitle
             // 
@@ -214,6 +207,31 @@
             this.lblTitle.Size = new System.Drawing.Size(293, 38);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "Admin Dashboard";
+            // 
+            // btnRervation
+            // 
+            this.btnRervation.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRervation.FlatAppearance.BorderSize = 0;
+            this.btnRervation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRervation.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRervation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnRervation.Location = new System.Drawing.Point(0, 394);
+            this.btnRervation.Name = "btnRervation";
+            this.btnRervation.Size = new System.Drawing.Size(186, 50);
+            this.btnRervation.TabIndex = 2;
+            this.btnRervation.Text = "Book Approval";
+            this.btnRervation.UseVisualStyleBackColor = true;
+            this.btnRervation.Click += new System.EventHandler(this.btnRervation_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LibraryManagementSystem.Properties.Resources.Screenshot__354_;
+            this.pictureBox1.Location = new System.Drawing.Point(60, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(63, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // AdminInterface
             // 
@@ -252,5 +270,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel PnlFormLoader;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnRervation;
     }
 }

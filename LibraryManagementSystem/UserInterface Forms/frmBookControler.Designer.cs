@@ -74,6 +74,7 @@
             this.pnlBookDetails.Name = "pnlBookDetails";
             this.pnlBookDetails.Size = new System.Drawing.Size(334, 281);
             this.pnlBookDetails.TabIndex = 3;
+            this.pnlBookDetails.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBookDetails_Paint);
             // 
             // btnBorrow
             // 

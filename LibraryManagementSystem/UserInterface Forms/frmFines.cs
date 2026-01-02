@@ -46,7 +46,7 @@ namespace LibraryManagementSystem.UserInterface_Forms
         }
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtBorrowerId.Clear();
+            txtBookID.Clear();
             txtName.Clear();
             txtDaysLate.Clear();
             txtFine.Clear();

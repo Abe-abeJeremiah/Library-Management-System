@@ -1,30 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static LibraryManagementSystem.Model.Register;
+﻿using System.Data;
+using System.Data.SqlClient;
+using LibraryManagementSystem.Database;
 
 namespace LibraryManagementSystem.Model
 {
     public class UserRepository
     {
-        private List<RegisteredUser> users = new List<RegisteredUser>();
-
-        public void AddUser(RegisteredUser user)
+        public DataTable GetByEmail(string email)
         {
-            users.Add(user);
-        }
+            using (SqlConnection con = Connection.GetConnection())
+            {
+                string sql = "SELECT * FROM Users WHERE EmailAddress = @Email";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@Email", email);
 
-        public List<RegisteredUser> GetAllUsers()
-        {
-            return users;
-        }
-
-        public RegisteredUser FindByEmail(string email)
-        {
-            return users.FirstOrDefault(u => u.EmailAddress == email);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
         }
     }
-
 }

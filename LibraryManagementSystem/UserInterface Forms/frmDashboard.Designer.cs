@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.PanelUser = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblQntyBorrowed = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblQntyBorrowed = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.lblQntyOverdue = new System.Windows.Forms.Label();
@@ -55,6 +55,7 @@
             this.grdCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdLanguage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grdPublicationYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label9 = new System.Windows.Forms.Label();
             this.PanelUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -77,6 +78,28 @@
             this.PanelUser.Name = "PanelUser";
             this.PanelUser.Size = new System.Drawing.Size(202, 114);
             this.PanelUser.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
+            this.label1.Location = new System.Drawing.Point(129, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 12);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "icon ning pic ";
+            // 
+            // lblQntyBorrowed
+            // 
+            this.lblQntyBorrowed.AutoSize = true;
+            this.lblQntyBorrowed.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQntyBorrowed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
+            this.lblQntyBorrowed.Location = new System.Drawing.Point(53, 52);
+            this.lblQntyBorrowed.Name = "lblQntyBorrowed";
+            this.lblQntyBorrowed.Size = new System.Drawing.Size(31, 32);
+            this.lblQntyBorrowed.TabIndex = 1;
+            this.lblQntyBorrowed.Text = "1";
             // 
             // lblRole
             // 
@@ -102,35 +125,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = null;
             this.pictureBox1.Location = new System.Drawing.Point(131, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(63, 63);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // lblQntyBorrowed
-            // 
-            this.lblQntyBorrowed.AutoSize = true;
-            this.lblQntyBorrowed.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQntyBorrowed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
-            this.lblQntyBorrowed.Location = new System.Drawing.Point(53, 52);
-            this.lblQntyBorrowed.Name = "lblQntyBorrowed";
-            this.lblQntyBorrowed.Size = new System.Drawing.Size(31, 32);
-            this.lblQntyBorrowed.TabIndex = 1;
-            this.lblQntyBorrowed.Text = "1";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
-            this.label1.Location = new System.Drawing.Point(129, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 12);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "icon ning pic ";
             // 
             // panel1
             // 
@@ -193,7 +193,6 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = null;
             this.pictureBox2.Location = new System.Drawing.Point(131, 21);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(63, 63);
@@ -260,7 +259,6 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = null;
             this.pictureBox3.Location = new System.Drawing.Point(131, 21);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(63, 63);
@@ -270,7 +268,6 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = null;
             this.pictureBox4.Location = new System.Drawing.Point(28, 155);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(664, 182);
@@ -340,6 +337,18 @@
             this.grdPublicationYear.HeaderText = "Publication Year";
             this.grdPublicationYear.Name = "grdPublicationYear";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
+            this.label9.Location = new System.Drawing.Point(85, 228);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(93, 12);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "asa na ang table?";
+            this.label9.Click += new System.EventHandler(this.label2_Click);
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,6 +356,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(749, 613);
             this.Controls.Add(this.grdDashboard);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.panel2);
@@ -401,5 +411,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn grdCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn grdLanguage;
         private System.Windows.Forms.DataGridViewTextBoxColumn grdPublicationYear;
+        private System.Windows.Forms.Label label9;
     }
 }

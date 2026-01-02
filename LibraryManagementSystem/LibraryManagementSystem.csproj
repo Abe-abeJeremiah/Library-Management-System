@@ -108,18 +108,53 @@
     <Compile Include="IndexForm.Designer.cs">
       <DependentUpon>IndexForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceAdmin\frmAdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceAdmin\frmAdminDashboard.Designer.cs">
+      <DependentUpon>frmAdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceAdmin\frmUserValidation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceAdmin\frmUserValidation.Designer.cs">
+      <DependentUpon>frmUserValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceAdmin\frmAddBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceAdmin\frmAddBooks.Designer.cs">
+      <DependentUpon>frmAddBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceAdmin\frmAdminFines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceAdmin\frmAdminFines.Designer.cs">
+      <DependentUpon>frmAdminFines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceAdmin\frmAdminHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceAdmin\frmAdminHistory.Designer.cs">
+      <DependentUpon>frmAdminHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceAdmin\frmBookReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceAdmin\frmBookReservation.Designer.cs">
+      <DependentUpon>frmBookReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\BookFunction.cs" />
+    <Compile Include="Model\Book.cs" />
     <Compile Include="Model\BookRepository.cs" />
+    <Compile Include="Model\BorrowService.cs" />
     <Compile Include="Model\UserFunction.cs" />
-    <Compile Include="Model\LibraryFunction.cs" />
-    <Compile Include="Model\Login.cs" />
-    <Compile Include="Model\Register.cs" />
+    <Compile Include="Model\LibraryRules.cs" />
     <Compile Include="Model\UserRepository.cs" />
     <Compile Include="Model\Users.cs" />
     <Compile Include="RegisterForm.cs">
@@ -183,6 +218,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IndexForm.resx">
       <DependentUpon>IndexForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceAdmin\frmAdminDashboard.resx">
+      <DependentUpon>frmAdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceAdmin\frmUserValidation.resx">
+      <DependentUpon>frmUserValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceAdmin\frmAddBooks.resx">
+      <DependentUpon>frmAddBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceAdmin\frmAdminFines.resx">
+      <DependentUpon>frmAdminFines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceAdmin\frmAdminHistory.resx">
+      <DependentUpon>frmAdminHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceAdmin\frmBookReservation.resx">
+      <DependentUpon>frmBookReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

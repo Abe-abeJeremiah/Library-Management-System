@@ -6,17 +6,10 @@ namespace LibraryManagementSystem.UserInterface_Forms
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.DataGridView dgvFines;
         private System.Windows.Forms.Label lblBorrowerId;
-        private System.Windows.Forms.TextBox txtBorrowerId;
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.Label lblDaysLate;
-        private System.Windows.Forms.TextBox txtDaysLate;
+        private System.Windows.Forms.TextBox txtBookID;
         private System.Windows.Forms.Label lblFine;
         private System.Windows.Forms.TextBox txtFine;
-        private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Button btnClear;
 
@@ -42,98 +35,40 @@ namespace LibraryManagementSystem.UserInterface_Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.dgvFines = new System.Windows.Forms.DataGridView();
             this.lblBorrowerId = new System.Windows.Forms.Label();
-            this.txtBorrowerId = new System.Windows.Forms.TextBox();
-            this.lblName = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.lblDaysLate = new System.Windows.Forms.Label();
-            this.txtDaysLate = new System.Windows.Forms.TextBox();
+            this.txtBookID = new System.Windows.Forms.TextBox();
             this.lblFine = new System.Windows.Forms.Label();
             this.txtFine = new System.Windows.Forms.TextBox();
-            this.btnCalculate = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFines)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbxPaymentMethod = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPaymentDetails = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(30, 20);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(285, 41);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Fines Management";
-            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
-            // 
-            // dgvFines
-            // 
-            this.dgvFines.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.dgvFines.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvFines.ColumnHeadersHeight = 29;
-            this.dgvFines.Location = new System.Drawing.Point(30, 80);
-            this.dgvFines.Name = "dgvFines";
-            this.dgvFines.RowHeadersWidth = 51;
-            this.dgvFines.Size = new System.Drawing.Size(550, 506);
-            this.dgvFines.TabIndex = 1;
             // 
             // lblBorrowerId
             // 
             this.lblBorrowerId.ForeColor = System.Drawing.Color.White;
-            this.lblBorrowerId.Location = new System.Drawing.Point(620, 110);
+            this.lblBorrowerId.Location = new System.Drawing.Point(283, 69);
             this.lblBorrowerId.Name = "lblBorrowerId";
             this.lblBorrowerId.Size = new System.Drawing.Size(100, 23);
             this.lblBorrowerId.TabIndex = 2;
-            this.lblBorrowerId.Text = "Borrower ID";
+            this.lblBorrowerId.Text = "Book ID";
             this.lblBorrowerId.Click += new System.EventHandler(this.lblBorrowerId_Click);
             // 
-            // txtBorrowerId
+            // txtBookID
             // 
-            this.txtBorrowerId.Location = new System.Drawing.Point(620, 136);
-            this.txtBorrowerId.Name = "txtBorrowerId";
-            this.txtBorrowerId.Size = new System.Drawing.Size(250, 22);
-            this.txtBorrowerId.TabIndex = 3;
-            // 
-            // lblName
-            // 
-            this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(620, 184);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(100, 23);
-            this.lblName.TabIndex = 4;
-            this.lblName.Text = "Name";
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(620, 210);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(250, 22);
-            this.txtName.TabIndex = 5;
-            // 
-            // lblDaysLate
-            // 
-            this.lblDaysLate.ForeColor = System.Drawing.Color.White;
-            this.lblDaysLate.Location = new System.Drawing.Point(620, 254);
-            this.lblDaysLate.Name = "lblDaysLate";
-            this.lblDaysLate.Size = new System.Drawing.Size(100, 23);
-            this.lblDaysLate.TabIndex = 6;
-            this.lblDaysLate.Text = "Days Late";
-            // 
-            // txtDaysLate
-            // 
-            this.txtDaysLate.Location = new System.Drawing.Point(620, 280);
-            this.txtDaysLate.Name = "txtDaysLate";
-            this.txtDaysLate.Size = new System.Drawing.Size(250, 22);
-            this.txtDaysLate.TabIndex = 7;
+            this.txtBookID.Location = new System.Drawing.Point(283, 95);
+            this.txtBookID.Name = "txtBookID";
+            this.txtBookID.Size = new System.Drawing.Size(250, 20);
+            this.txtBookID.TabIndex = 3;
             // 
             // lblFine
             // 
             this.lblFine.ForeColor = System.Drawing.Color.White;
-            this.lblFine.Location = new System.Drawing.Point(620, 324);
+            this.lblFine.Location = new System.Drawing.Point(283, 128);
             this.lblFine.Name = "lblFine";
             this.lblFine.Size = new System.Drawing.Size(100, 23);
             this.lblFine.TabIndex = 8;
@@ -141,31 +76,18 @@ namespace LibraryManagementSystem.UserInterface_Forms
             // 
             // txtFine
             // 
-            this.txtFine.Location = new System.Drawing.Point(620, 350);
+            this.txtFine.Location = new System.Drawing.Point(283, 154);
             this.txtFine.Name = "txtFine";
             this.txtFine.ReadOnly = true;
-            this.txtFine.Size = new System.Drawing.Size(250, 22);
+            this.txtFine.Size = new System.Drawing.Size(250, 20);
             this.txtFine.TabIndex = 9;
-            // 
-            // btnCalculate
-            // 
-            this.btnCalculate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalculate.ForeColor = System.Drawing.Color.White;
-            this.btnCalculate.Location = new System.Drawing.Point(620, 410);
-            this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(250, 23);
-            this.btnCalculate.TabIndex = 10;
-            this.btnCalculate.Text = "Calculate Fine";
-            this.btnCalculate.UseVisualStyleBackColor = false;
-            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
             // btnPay
             // 
             this.btnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
             this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPay.ForeColor = System.Drawing.Color.White;
-            this.btnPay.Location = new System.Drawing.Point(620, 460);
+            this.btnPay.Location = new System.Drawing.Point(286, 317);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(250, 23);
             this.btnPay.TabIndex = 11;
@@ -178,7 +100,7 @@ namespace LibraryManagementSystem.UserInterface_Forms
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(620, 510);
+            this.btnClear.Location = new System.Drawing.Point(286, 367);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(250, 23);
             this.btnClear.TabIndex = 12;
@@ -186,32 +108,81 @@ namespace LibraryManagementSystem.UserInterface_Forms
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // label1
+            // 
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(283, 189);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Payment Method";
+            // 
+            // cmbxPaymentMethod
+            // 
+            this.cmbxPaymentMethod.FormattingEnabled = true;
+            this.cmbxPaymentMethod.Items.AddRange(new object[] {
+            "Gcash",
+            "Paypal",
+            "Cash"});
+            this.cmbxPaymentMethod.Location = new System.Drawing.Point(286, 215);
+            this.cmbxPaymentMethod.Name = "cmbxPaymentMethod";
+            this.cmbxPaymentMethod.Size = new System.Drawing.Size(247, 21);
+            this.cmbxPaymentMethod.TabIndex = 37;
+            // 
+            // label2
+            // 
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(283, 248);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Payment Details";
+            // 
+            // txtPaymentDetails
+            // 
+            this.txtPaymentDetails.Location = new System.Drawing.Point(283, 274);
+            this.txtPaymentDetails.Name = "txtPaymentDetails";
+            this.txtPaymentDetails.ReadOnly = true;
+            this.txtPaymentDetails.Size = new System.Drawing.Size(250, 20);
+            this.txtPaymentDetails.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(590, 157);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 123);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "irrelevant ang borrower id, kay naka login naman, dapat auto kabalo na";
+            // 
             // frmFines
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(7498, 613);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.dgvFines);
+            this.ClientSize = new System.Drawing.Size(1620, 613);
+            this.Controls.Add(this.cmbxPaymentMethod);
             this.Controls.Add(this.lblBorrowerId);
-            this.Controls.Add(this.txtBorrowerId);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.lblDaysLate);
-            this.Controls.Add(this.txtDaysLate);
+            this.Controls.Add(this.txtBookID);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFine);
+            this.Controls.Add(this.txtPaymentDetails);
             this.Controls.Add(this.txtFine);
-            this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.btnClear);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmFines";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFines)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
         #endregion
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbxPaymentMethod;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPaymentDetails;
+        private System.Windows.Forms.Label label3;
     }
 }
