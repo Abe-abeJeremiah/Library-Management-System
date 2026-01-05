@@ -1,7 +1,7 @@
 /* ================================
    CREATE DATABASE
 ================================ */
-/* CREATE DATABASE LibraryDb;*/
+ CREATE DATABASE LibraryDb;
 GO
 USE LibraryDb;
 GO
@@ -143,3 +143,47 @@ JOIN BookReturn r ON b.BorrowID = r.BorrowID
 JOIN Users u ON b.UserID = u.UserID
 WHERE r.ReturnDate > b.DueDate;
 GO
+
+CREATE TABLE Fines (
+    FineID INT IDENTITY PRIMARY KEY,
+    UserID INT NOT NULL,
+    BorrowID INT NOT NULL,
+    DaysLate INT NOT NULL,
+    DailyRate DECIMAL(10,2) NOT NULL,
+    FineAmount DECIMAL(10,2) NOT NULL,
+    IsCleared BIT DEFAULT 0,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (BorrowID) REFERENCES BookBorrow(BorrowID)
+);
+
+
+CREATE TABLE Payments (
+    PaymentID INT IDENTITY PRIMARY KEY,
+    FineID INT NOT NULL,
+    UserID INT NOT NULL,
+    AmountPaid DECIMAL(10,2) NOT NULL,
+    PaymentMethod VARCHAR(20),
+    PaymentDate DATETIME DEFAULT GETDATE(),
+
+    FOREIGN KEY (FineID) REFERENCES Fines(FineID),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
+CREATE TABLE FineWaivers (
+    WaiverID INT IDENTITY PRIMARY KEY,
+    FineID INT NOT NULL,
+    AdminID INT NOT NULL,
+    Reason VARCHAR(255),
+    WaivedAmount DECIMAL(10,2),
+    WaiverDate DATETIME DEFAULT GETDATE(),
+
+    FOREIGN KEY (FineID) REFERENCES Fines(FineID),
+    FOREIGN KEY (AdminID) REFERENCES Users(UserID)
+);
+
+
+
+
+select * from dbo.Fines;
