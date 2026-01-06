@@ -18,7 +18,14 @@ CREATE TABLE Users (
     ExpirationDate DATE NOT NULL,
     RegistrationDate DATE DEFAULT GETDATE()
 );
+
+
+ALTER TABLE Users
+ADD   Address VARCHAR(255),
+    Contact VARCHAR(50),
+    ProfileImagePath VARCHAR(255);
 GO
+
 
 CREATE INDEX idx_users_membertype ON Users(MemberType);
 GO
@@ -43,6 +50,13 @@ CREATE TABLE Books (
     Language VARCHAR(50),
     AvailableCopies INT DEFAULT 1
 );
+
+ALTER TABLE Books
+ADD BookImagePath VARCHAR(255);
+
+ALTER TABLE Books ADD Category VARCHAR(100);
+
+
 GO
 
 CREATE INDEX idx_books_title ON Books(Title);
@@ -185,5 +199,8 @@ CREATE TABLE FineWaivers (
 
 
 
+UPDATE Users
+SET MemberType = 'Admin'
+WHERE UserName = 'Admin';
 
-select * from dbo.Fines;
+select * from dbo.Books;
