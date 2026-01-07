@@ -3,223 +3,385 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using LibraryManagementSystem.Database;
-using System.Drawing.Printing;
 
 namespace LibraryManagementSystem.UserInterface_Forms
 {
     public partial class frmFines : Form
     {
-        private decimal dailyRate = 0;
-        private decimal maxFine = 0;
-        private int currentFineId = 0; // used for payment
+        private decimal overdueTotal = 0;
+        private decimal lostBookFee = 300;
+        private decimal damagedBookFee = 150;
+        private decimal lostCardFee = 100;
 
         public frmFines()
         {
             InitializeComponent();
-            cmbxPaymentMethod.SelectedIndexChanged += cmbxPaymentMethod_SelectedIndexChanged;
+
+            // Events that match the designer
+            cmbPaymentMethod.SelectedIndexChanged += cmbPaymentMethod_SelectedIndexChanged;
+
+            chkLostBook.CheckedChanged += Charges_Changed;
+            chkDamagedBook.CheckedChanged += Charges_Changed;
+            chkLostCard.CheckedChanged += Charges_Changed;
+
+            btnRequestWaiver.Click += btnRequestWaiver_Click;
+            btnPay.Click += btnPay_Click;
         }
 
-        // MUST MATCH DESIGNER
-        private void frmFines_Load_1(object sender, EventArgs e)
+        // ===================== FORM LOAD =====================
+        private void frmFines_Load(object sender, EventArgs e)
         {
-            LoadStudentFine();
+            LoadOverdue();
+            LoadWaiverHistory();
+            LoadPaymentHistory();
+
+            txtLostFee.Text = lostBookFee.ToString();
+            txtDamagedFee.Text = damagedBookFee.ToString();
+            txtLostCardFee.Text = lostCardFee.ToString();
         }
 
-        // ================= LOAD & COMPUTE FINES =================
-        private void LoadStudentFine()
+        // ===================== LOAD OVERDUE =====================
+        private void LoadOverdue()
         {
-            int userId = LoggedInUser.UserID;
-            string memberType = LoggedInUser.Role;
-
-            SetFineRules(memberType);
-
-            decimal totalFine = 0;
-            int lastBookId = 0;
+            overdueTotal = 0;
 
             using (SqlConnection con = Connection.GetConnection())
             {
                 con.Open();
 
-                string query = @"
-                    SELECT BorrowID, BookID, DueDate
-                    FROM BookBorrow
-                    WHERE UserID = @UserID
-                    AND Status = 'Borrowed'
-                    AND DueDate < GETDATE();
-                ";
+                string sql =
+                @"SELECT F.FineID, B.Title, F.DaysLate, F.FineAmount
+                  FROM Fines F
+                  INNER JOIN BookBorrow BB ON F.BorrowID = BB.BorrowID
+                  INNER JOIN Books B ON BB.BookID = B.BookID
+                  WHERE F.UserID = @UID AND F.IsCleared = 0";
 
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                using (SqlCommand cmd = new SqlCommand(sql, con))
                 {
-                    cmd.Parameters.AddWithValue("@UserID", userId);
+                    cmd.Parameters.AddWithValue("@UID", LoggedInUser.UserID);
 
-                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    DataTable dt = new DataTable();
+                    dt.Load(cmd.ExecuteReader());
+                    dgvOverdue.DataSource = dt;
+                }
+            }
+
+            foreach (DataGridViewRow row in dgvOverdue.Rows)
+            {
+                if (row.Cells["FineAmount"].Value != null)
+                {
+                    overdueTotal += Convert.ToDecimal(row.Cells["FineAmount"].Value);
+                }
+            }
+
+            txtTotalOverdue.Text = overdueTotal.ToString("0.00");
+            ComputeGrandTotal();
+        }
+
+        // ===================== CHARGES CHANGE EVENT =====================
+        private void Charges_Changed(object sender, EventArgs e)
+        {
+            ComputeGrandTotal();
+        }
+
+        // ===================== COMPUTE GRAND TOTAL =====================
+        private void ComputeGrandTotal()
+        {
+            decimal total = overdueTotal;
+
+            if (chkLostBook.Checked) total += lostBookFee;
+            if (chkDamagedBook.Checked) total += damagedBookFee;
+            if (chkLostCard.Checked) total += lostCardFee;
+
+            txtGrandTotal.Text = total.ToString("0.00");
+        }
+
+        // ===================== PAYMENT METHOD =====================
+        private void cmbPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cmbPaymentMethod.Text)
+            {
+                case "Gcash":
+                    txtPaymentDetails.Text = "GCash #: 09XXXXXXXXX";
+                    break;
+                case "Paypal":
+                    txtPaymentDetails.Text = "PayPal: library@email.com";
+                    break;
+                case "Cash":
+                    txtPaymentDetails.Text = "Pay at librarian counter";
+                    break;
+                default:
+                    txtPaymentDetails.Clear();
+                    break;
+            }
+        }
+
+        // ===================== PAY BUTTON =====================
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            if (txtGrandTotal.Text == "0.00")
+            {
+                MessageBox.Show("No charges selected to pay.");
+                return;
+            }
+
+            if (cmbPaymentMethod.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a payment method before proceeding.");
+                return;
+            }
+
+            // Check if user has overdue fines
+            bool hasOverdue = dgvOverdue.Rows.Count > 0;
+
+            // Check if user has borrowed books
+            bool hasBorrowedBooks = false;
+            using (SqlConnection con = Connection.GetConnection())
+            {
+                con.Open();
+                string checkBorrow = @"SELECT COUNT(*) FROM BookBorrow 
+                               WHERE UserID = @UID AND Status = 'Borrowed'";
+                using (SqlCommand cmd = new SqlCommand(checkBorrow, con))
+                {
+                    cmd.Parameters.AddWithValue("@UID", LoggedInUser.UserID);
+                    hasBorrowedBooks = ((int)cmd.ExecuteScalar()) > 0;
+                }
+            }
+
+            // Check if other charges selected
+            bool lostBookSelected = chkLostBook.Checked;
+            bool damagedBookSelected = chkDamagedBook.Checked;
+            bool lostCardSelected = chkLostCard.Checked;
+
+            // Validation for other charges
+            if ((lostBookSelected || damagedBookSelected) && !hasBorrowedBooks)
+            {
+                MessageBox.Show("You don't have any borrowed books. Cannot pay Lost/Damaged charges yet.");
+                return;
+            }
+
+            // Validation for total payment
+            if (!hasOverdue && !lostBookSelected && !damagedBookSelected && !lostCardSelected)
+            {
+                MessageBox.Show("You don't have any fines or charges to pay.");
+                return;
+            }
+
+            decimal amount = Convert.ToDecimal(txtGrandTotal.Text);
+
+            using (SqlConnection con = Connection.GetConnection())
+            {
+                con.Open();
+
+                // Pay overdue fines
+                foreach (DataGridViewRow row in dgvOverdue.Rows)
+                {
+                    int fineId = Convert.ToInt32(row.Cells["FineID"].Value);
+                    decimal fineAmount = Convert.ToDecimal(row.Cells["FineAmount"].Value);
+
+                    if (fineAmount > 0)
                     {
-                        while (dr.Read())
+                        string sqlFinePayment =
+                        @"INSERT INTO Payments (FineID, UserID, AmountPaid, PaymentMethod, Status)
+                  VALUES (@FineID, @UID, @Amount, @Method, 'Pending')";
+
+                        using (SqlCommand cmd = new SqlCommand(sqlFinePayment, con))
                         {
-                            int borrowId = Convert.ToInt32(dr["BorrowID"]);
-                            int bookId = Convert.ToInt32(dr["BookID"]);
-                            DateTime dueDate = Convert.ToDateTime(dr["DueDate"]);
+                            cmd.Parameters.AddWithValue("@FineID", fineId);
+                            cmd.Parameters.AddWithValue("@UID", LoggedInUser.UserID);
+                            cmd.Parameters.AddWithValue("@Amount", fineAmount);
+                            cmd.Parameters.AddWithValue("@Method", cmbPaymentMethod.Text);
 
-                            int lateDays = (DateTime.Today - dueDate).Days;
-                            if (lateDays <= 0) continue;
-
-                            decimal fine = lateDays * dailyRate;
-                            if (fine > maxFine) fine = maxFine;
-
-                            totalFine += fine;
-                            lastBookId = bookId;
-
-                            // SAVE FINE IF NOT EXISTS
-                            InsertFineIfNotExists(con, userId, borrowId, lateDays, fine);
+                            cmd.ExecuteNonQuery();
                         }
                     }
                 }
 
-                if (totalFine > 0)
-                {
-                    txtBookID.Text = lastBookId.ToString();
-                    txtFine.Text = totalFine.ToString("0.00");
-                    currentFineId = GetLatestFineId(con, userId);
-                }
-                else
-                {
-                    txtBookID.Clear();
-                    txtFine.Text = "0.00";
-                }
+                // Pay other charges
+                if (lostBookSelected)
+                    InsertOtherCharge(con, "Lost Book", lostBookFee);
+
+                if (damagedBookSelected)
+                    InsertOtherCharge(con, "Damaged Book", damagedBookFee);
+
+                if (lostCardSelected)
+                    InsertOtherCharge(con, "Lost Card", lostCardFee);
             }
+
+            MessageBox.Show("Payment submitted!\nPlease wait for librarian approval.");
+            LoadOverdue();
+            LoadPaymentHistory();
+            ClearFields();
         }
 
-        // ================= INSERT FINE =================
-        private void InsertFineIfNotExists(SqlConnection con, int userId, int borrowId, int daysLate, decimal amount)
-        {
-            string check = "SELECT COUNT(*) FROM Fines WHERE BorrowID=@BorrowID AND IsCleared=0";
-            using (SqlCommand cmd = new SqlCommand(check, con))
-            {
-                cmd.Parameters.AddWithValue("@BorrowID", borrowId);
-                if ((int)cmd.ExecuteScalar() > 0) return;
-            }
 
-            string insert = @"
-                INSERT INTO Fines (UserID, BorrowID, DaysLate, DailyRate, FineAmount)
-                VALUES (@UserID, @BorrowID, @DaysLate, @Rate, @Amount)";
-            using (SqlCommand cmd = new SqlCommand(insert, con))
+        // ===================== INSERT OTHER CHARGE =====================
+        private void InsertOtherCharge(SqlConnection con, string type, decimal amount)
+        {
+            using (SqlCommand cmd = new SqlCommand())
             {
-                cmd.Parameters.AddWithValue("@UserID", userId);
-                cmd.Parameters.AddWithValue("@BorrowID", borrowId);
-                cmd.Parameters.AddWithValue("@DaysLate", daysLate);
-                cmd.Parameters.AddWithValue("@Rate", dailyRate);
+                cmd.Connection = con;
+                cmd.CommandText = @"INSERT INTO Payments (UserID, OtherChargeID, AmountPaid, PaymentMethod, Status)
+                            VALUES (@UID, @OtherChargeID, @Amount, @Method, 'Pending')";
+
+                // Insert to OtherCharges first
+                SqlCommand ocCmd = new SqlCommand(@"INSERT INTO OtherCharges (UserID, ChargeType, Amount)
+                                            OUTPUT INSERTED.OtherChargeID
+                                            VALUES (@UID, @Type, @Amount)", con);
+                ocCmd.Parameters.AddWithValue("@UID", LoggedInUser.UserID);
+                ocCmd.Parameters.AddWithValue("@Type", type);
+                ocCmd.Parameters.AddWithValue("@Amount", amount);
+
+                int otherChargeId = (int)ocCmd.ExecuteScalar();
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@UID", LoggedInUser.UserID);
+                cmd.Parameters.AddWithValue("@OtherChargeID", otherChargeId);
                 cmd.Parameters.AddWithValue("@Amount", amount);
+                cmd.Parameters.AddWithValue("@Method", cmbPaymentMethod.Text);
+
                 cmd.ExecuteNonQuery();
             }
         }
 
-        // ================= GET FINE ID =================
-        private int GetLatestFineId(SqlConnection con, int userId)
-        {
-            string sql = "SELECT TOP 1 FineID FROM Fines WHERE UserID=@UserID AND IsCleared=0 ORDER BY FineID DESC";
-            using (SqlCommand cmd = new SqlCommand(sql, con))
-            {
-                cmd.Parameters.AddWithValue("@UserID", userId);
-                object result = cmd.ExecuteScalar();
-                return result == null ? 0 : Convert.ToInt32(result);
-            }
-        }
 
-        // ================= MEMBER TYPE RULES =================
-        private void SetFineRules(string memberType)
+        // ===================== WAIVER REQUEST =====================
+        private void btnRequestWaiver_Click(object sender, EventArgs e)
         {
-            switch (memberType)
+            if (txtWaiverReason.Text.Trim() == "")
             {
-                case "Student":
-                    dailyRate = 5m; maxFine = 500m; break;
-                case "Staff":
-                case "Faculty":
-                    dailyRate = 10m; maxFine = 1000m; break;
-                case "Guest":
-                    dailyRate = 20m; maxFine = 1500m; break;
-                default:
-                    dailyRate = 5m; maxFine = 500m; break;
-            }
-        }
-
-        // ================= PAYMENT METHOD =================
-     
-        private void cmbxPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbxPaymentMethod.Text == "Gcash")
-            {
-                txtPaymentDetails.Text = "GCash #: 09XXXXXXXXX";
-            }
-            else if (cmbxPaymentMethod.Text == "Paypal")
-            {
-                txtPaymentDetails.Text = "PayPal: library@email.com";
-            }
-            else if (cmbxPaymentMethod.Text == "Cash")
-            {
-                txtPaymentDetails.Text = "Pay at librarian counter";
-            }
-            else
-            {
-                txtPaymentDetails.Text = "";
-            }
-        }
-
-
-        // ================= PAY & SAVE =================
-        private void btnPay_Click(object sender, EventArgs e)
-        {
-            if (txtFine.Text == "0.00" || currentFineId == 0)
-            {
-                MessageBox.Show("No fine to pay.");
+                MessageBox.Show("Please enter a reason for waiver.");
                 return;
             }
 
+            if (dgvOverdue.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a fine to request a waiver for.");
+                return;
+            }
+
+            int fineId = Convert.ToInt32(dgvOverdue.SelectedRows[0].Cells["FineID"].Value);
+
+            using (SqlConnection con = Connection.GetConnection())
+            {
+                con.Open();
+
+                // Check if waiver already pending
+                string checkSql = @"SELECT COUNT(*) FROM WaiverRequests
+                                    WHERE FineID = @FineID AND UserID = @UserID AND Status = 'Pending'";
+                using (SqlCommand checkCmd = new SqlCommand(checkSql, con))
+                {
+                    checkCmd.Parameters.AddWithValue("@FineID", fineId);
+                    checkCmd.Parameters.AddWithValue("@UserID", LoggedInUser.UserID);
+
+                    int exists = (int)checkCmd.ExecuteScalar();
+                    if (exists > 0)
+                    {
+                        MessageBox.Show("You already submitted a waiver request for this fine.\nPlease wait for librarian approval.");
+                        return;
+                    }
+                }
+
+                // Insert waiver request
+                string sql = @"INSERT INTO WaiverRequests (FineID, UserID, Reason, RequestDate, Status)
+                               VALUES (@FineID, @UserID, @Reason, GETDATE(), 'Pending')";
+                using (SqlCommand cmd = new SqlCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@FineID", fineId);
+                    cmd.Parameters.AddWithValue("@UserID", LoggedInUser.UserID);
+                    cmd.Parameters.AddWithValue("@Reason", txtWaiverReason.Text.Trim());
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Your waiver request has been submitted.\nPlease wait for librarian approval.");
+
+            LoadWaiverHistory();
+            txtWaiverReason.Clear();
+        }
+
+        // ===================== CLEAR =====================
+        private void ClearFields()
+        {
+            chkLostBook.Checked = false;
+            chkDamagedBook.Checked = false;
+            chkLostCard.Checked = false;
+
+            txtPaymentDetails.Clear();
+            cmbPaymentMethod.SelectedIndex = -1;
+            txtWaiverReason.Clear();
+
+            ComputeGrandTotal();
+        }
+
+        private void LoadWaiverHistory()
+        {
             using (SqlConnection con = Connection.GetConnection())
             {
                 con.Open();
 
                 string sql = @"
-                    INSERT INTO Payments (FineID, UserID, AmountPaid, PaymentMethod)
-                    VALUES (@FineID, @UserID, @Amount, @Method);
-
-                    UPDATE Fines SET IsCleared = 1 WHERE FineID = @FineID;
-                ";
+                    SELECT RequestID, FineID, Reason, RequestDate, Status
+                    FROM WaiverRequests
+                    WHERE UserID = @UID
+                    ORDER BY RequestDate DESC";
 
                 using (SqlCommand cmd = new SqlCommand(sql, con))
                 {
-                    cmd.Parameters.AddWithValue("@FineID", currentFineId);
-                    cmd.Parameters.AddWithValue("@UserID", LoggedInUser.UserID);
-                    cmd.Parameters.AddWithValue("@Amount", Convert.ToDecimal(txtFine.Text));
-                    cmd.Parameters.AddWithValue("@Method", cmbxPaymentMethod.Text);
-                    cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@UID", LoggedInUser.UserID);
+
+                    DataTable dt = new DataTable();
+                    dt.Load(cmd.ExecuteReader());
+
+                    dgvWaiverHistory.DataSource = dt;
                 }
             }
-
-            MessageBox.Show(
-                "Payment recorded successfully!\nOfficial receipt generated.",
-                "Payment Success",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
-
-            ClearFields();
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void LoadPaymentHistory()
         {
-            ClearFields();
+            using (SqlConnection con = Connection.GetConnection())
+            {
+                con.Open();
+
+                string sql = @"
+            SELECT 
+                p.PaymentID,
+                p.FineID,
+                p.OtherChargeID,
+                oc.ChargeType,
+                p.AmountPaid,
+                p.PaymentMethod,
+                p.Status,
+                p.PaymentDate
+            FROM Payments p
+            LEFT JOIN OtherCharges oc ON p.OtherChargeID = oc.OtherChargeID
+            WHERE p.UserID = @UID
+            ORDER BY p.PaymentDate DESC";
+
+                using (SqlCommand cmd = new SqlCommand(sql, con))
+                {
+                    cmd.Parameters.AddWithValue("@UID", LoggedInUser.UserID);
+
+                    DataTable dt = new DataTable();
+                    dt.Load(cmd.ExecuteReader());
+
+                    dgvPaymentHistory.AutoGenerateColumns = false;
+                    dgvPaymentHistory.DataSource = dt;
+
+                }
+            }
         }
 
-        private void ClearFields()
+
+        private void txtWaiverReason_TextChanged(object sender, EventArgs e)
         {
-            txtBookID.Clear();
-            txtFine.Text = "0.00";
-            txtPaymentDetails.Clear();
-            cmbxPaymentMethod.SelectedIndex = -1;
-            currentFineId = 0;
+
         }
 
-        private void lblBorrowerId_Click(object sender, EventArgs e) { }
-        private void txtPaymentDetails_TextChanged(object sender, EventArgs e) { }
+        private void dgvPaymentHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
