@@ -80,6 +80,10 @@ CREATE TABLE BookBorrow (
     CONSTRAINT fk_borrow_book FOREIGN KEY (BookID)
         REFERENCES Books(BookID)
 );
+
+ALTER TABLE BookBorrow ADD Status VARCHAR(20);
+
+
 GO
 
 CREATE INDEX idx_borrow_user ON BookBorrow(UserID);
@@ -185,6 +189,36 @@ CREATE TABLE Payments (
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
+ALTER TABLE Payments
+ADD Status VARCHAR(20) NOT NULL DEFAULT 'Pending';
+ALTER TABLE Payments
+ALTER COLUMN FineID INT NULL;
+
+ALTER TABLE Payments
+ALTER COLUMN OtherChargeID INT NULL;
+
+ALTER TABLE Payments
+ADD CONSTRAINT FK_Payments_OtherCharges
+FOREIGN KEY (OtherChargeID) REFERENCES OtherCharges(OtherChargeID);
+
+
+
+
+
+    CREATE TABLE OtherCharges
+(
+    OtherChargeID INT IDENTITY(1,1) PRIMARY KEY, 
+    UserID INT NOT NULL,                         
+    ChargeType VARCHAR(50) NOT NULL,              
+    BookID INT NULL,                               
+    Amount DECIMAL(10,2) NOT NULL,                
+    Status VARCHAR(20) NOT NULL DEFAULT 'Pending',
+    ChargeDate DATETIME NOT NULL DEFAULT GETDATE()
+)
+
+
+
+
 CREATE TABLE FineWaivers (
     WaiverID INT IDENTITY PRIMARY KEY,
     FineID INT NOT NULL,
@@ -197,10 +231,28 @@ CREATE TABLE FineWaivers (
     FOREIGN KEY (AdminID) REFERENCES Users(UserID)
 );
 
+CREATE TABLE WaiverRequests (
+    RequestID INT IDENTITY PRIMARY KEY,
+    FineID INT NOT NULL,
+    UserID INT NOT NULL,
+    Reason VARCHAR(255),
+    RequestDate DATETIME DEFAULT GETDATE(),
+    Status VARCHAR(20) DEFAULT 'Pending',
+
+    FOREIGN KEY (FineID) REFERENCES Fines(FineID),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
 
 
 UPDATE Users
 SET MemberType = 'Admin'
 WHERE UserName = 'Admin';
 
-select * from dbo.Books;
+select * from dbo.FineWaivers; 
+
+
+
+SELECT COLUMN_NAME
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'Payments';
