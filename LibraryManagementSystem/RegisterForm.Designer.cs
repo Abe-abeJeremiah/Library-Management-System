@@ -45,8 +45,12 @@ namespace LibraryManagementSystem
             this.txtConfimPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbxRegisterType = new System.Windows.Forms.ComboBox();
+            this.picEyePassword = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picEyeConfirmPassword = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picEyePassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEyeConfirmPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // lnkLogin
@@ -124,7 +128,7 @@ namespace LibraryManagementSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRegisterPassword.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtRegisterPassword.Location = new System.Drawing.Point(52, 368);
-            this.txtRegisterPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRegisterPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtRegisterPassword.Name = "txtRegisterPassword";
             this.txtRegisterPassword.Size = new System.Drawing.Size(457, 22);
             this.txtRegisterPassword.TabIndex = 19;
@@ -138,7 +142,7 @@ namespace LibraryManagementSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRegisterEmail.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtRegisterEmail.Location = new System.Drawing.Point(52, 255);
-            this.txtRegisterEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRegisterEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtRegisterEmail.Name = "txtRegisterEmail";
             this.txtRegisterEmail.Size = new System.Drawing.Size(457, 22);
             this.txtRegisterEmail.TabIndex = 18;
@@ -190,7 +194,7 @@ namespace LibraryManagementSystem
             this.btnRegister.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.Location = new System.Drawing.Point(213, 485);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(172, 50);
             this.btnRegister.TabIndex = 14;
@@ -219,7 +223,7 @@ namespace LibraryManagementSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUserName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtUserName.Location = new System.Drawing.Point(52, 198);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(457, 22);
             this.txtUserName.TabIndex = 29;
@@ -246,7 +250,7 @@ namespace LibraryManagementSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtConfimPassword.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtConfimPassword.Location = new System.Drawing.Point(52, 425);
-            this.txtConfimPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtConfimPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtConfimPassword.Name = "txtConfimPassword";
             this.txtConfimPassword.Size = new System.Drawing.Size(457, 22);
             this.txtConfimPassword.TabIndex = 32;
@@ -275,11 +279,24 @@ namespace LibraryManagementSystem
             "Staff ",
             "Guest"});
             this.cmbxRegisterType.Location = new System.Drawing.Point(53, 311);
-            this.cmbxRegisterType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbxRegisterType.Margin = new System.Windows.Forms.Padding(4);
             this.cmbxRegisterType.Name = "cmbxRegisterType";
             this.cmbxRegisterType.Size = new System.Drawing.Size(456, 24);
             this.cmbxRegisterType.TabIndex = 36;
             this.cmbxRegisterType.SelectedIndexChanged += new System.EventHandler(this.cmbxRegisterType_SelectedIndexChanged);
+            // 
+            // picEyePassword
+            // 
+            this.picEyePassword.BackColor = System.Drawing.Color.Transparent;
+            this.picEyePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picEyePassword.Image = global::LibraryManagementSystem.Properties.Resources.closed_eyes;
+            this.picEyePassword.Location = new System.Drawing.Point(472, 368);
+            this.picEyePassword.Name = "picEyePassword";
+            this.picEyePassword.Size = new System.Drawing.Size(37, 22);
+            this.picEyePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEyePassword.TabIndex = 38;
+            this.picEyePassword.TabStop = false;
+            this.picEyePassword.Click += new System.EventHandler(this.picEyePassword_Click);
             // 
             // pictureBox1
             // 
@@ -288,7 +305,7 @@ namespace LibraryManagementSystem
             this.pictureBox1.ErrorImage = global::LibraryManagementSystem.Properties.Resources.my_university_library_3_1442034;
             this.pictureBox1.InitialImage = global::LibraryManagementSystem.Properties.Resources.my_university_library_3_1442034;
             this.pictureBox1.Location = new System.Drawing.Point(572, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(601, 644);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -297,12 +314,27 @@ namespace LibraryManagementSystem
             this.pictureBox1.UseWaitCursor = true;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // picEyeConfirmPassword
+            // 
+            this.picEyeConfirmPassword.BackColor = System.Drawing.Color.Transparent;
+            this.picEyeConfirmPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picEyeConfirmPassword.Image = global::LibraryManagementSystem.Properties.Resources.closed_eyes;
+            this.picEyeConfirmPassword.Location = new System.Drawing.Point(472, 425);
+            this.picEyeConfirmPassword.Name = "picEyeConfirmPassword";
+            this.picEyeConfirmPassword.Size = new System.Drawing.Size(37, 22);
+            this.picEyeConfirmPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEyeConfirmPassword.TabIndex = 39;
+            this.picEyeConfirmPassword.TabStop = false;
+            this.picEyeConfirmPassword.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1173, 644);
+            this.Controls.Add(this.picEyeConfirmPassword);
+            this.Controls.Add(this.picEyePassword);
             this.Controls.Add(this.cmbxRegisterType);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtConfimPassword);
@@ -322,11 +354,13 @@ namespace LibraryManagementSystem
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnRegister);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmRegister";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.RegisterForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picEyePassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEyeConfirmPassword)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,5 +386,7 @@ namespace LibraryManagementSystem
         private System.Windows.Forms.TextBox txtConfimPassword;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbxRegisterType;
+        private System.Windows.Forms.PictureBox picEyePassword;
+        private System.Windows.Forms.PictureBox picEyeConfirmPassword;
     }
 }
