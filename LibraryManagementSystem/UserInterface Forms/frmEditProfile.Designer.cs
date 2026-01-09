@@ -87,9 +87,9 @@ namespace LibraryManagementSystem.UserInterface_Forms
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(-3, 5);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1003, 748);
+            this.panel1.Size = new System.Drawing.Size(1003, 844);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -98,7 +98,7 @@ namespace LibraryManagementSystem.UserInterface_Forms
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Nirmala UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(45, 395);
+            this.label9.Location = new System.Drawing.Point(47, 417);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(238, 41);
@@ -109,18 +109,19 @@ namespace LibraryManagementSystem.UserInterface_Forms
             // 
             this.btnChangePassword.ForeColor = System.Drawing.Color.Black;
             this.btnChangePassword.Location = new System.Drawing.Point(795, 359);
-            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(135, 32);
             this.btnChangePassword.TabIndex = 4;
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click_1);
             // 
             // button2
             // 
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(788, 688);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(790, 710);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(141, 32);
             this.button2.TabIndex = 4;
@@ -131,41 +132,44 @@ namespace LibraryManagementSystem.UserInterface_Forms
             // button1
             // 
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(788, 618);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(790, 640);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 32);
             this.button1.TabIndex = 4;
             this.button1.Text = "Change Contact";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnChangeAddress
             // 
             this.btnChangeAddress.ForeColor = System.Drawing.Color.Black;
-            this.btnChangeAddress.Location = new System.Drawing.Point(788, 542);
-            this.btnChangeAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChangeAddress.Location = new System.Drawing.Point(790, 564);
+            this.btnChangeAddress.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangeAddress.Name = "btnChangeAddress";
             this.btnChangeAddress.Size = new System.Drawing.Size(141, 32);
             this.btnChangeAddress.TabIndex = 4;
             this.btnChangeAddress.Text = "Change Address";
             this.btnChangeAddress.UseVisualStyleBackColor = true;
+            this.btnChangeAddress.Click += new System.EventHandler(this.btnChangeAddress_Click_1);
             // 
             // btnChangeUserName
             // 
             this.btnChangeUserName.ForeColor = System.Drawing.Color.Black;
-            this.btnChangeUserName.Location = new System.Drawing.Point(788, 469);
-            this.btnChangeUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChangeUserName.Location = new System.Drawing.Point(790, 491);
+            this.btnChangeUserName.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangeUserName.Name = "btnChangeUserName";
             this.btnChangeUserName.Size = new System.Drawing.Size(141, 32);
             this.btnChangeUserName.TabIndex = 4;
             this.btnChangeUserName.Text = "Change UserName";
             this.btnChangeUserName.UseVisualStyleBackColor = true;
+            this.btnChangeUserName.Click += new System.EventHandler(this.btnChangeUserName_Click_1);
             // 
             // btnChangeEmail
             // 
             this.btnChangeEmail.ForeColor = System.Drawing.Color.Black;
             this.btnChangeEmail.Location = new System.Drawing.Point(795, 289);
-            this.btnChangeEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChangeEmail.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangeEmail.Name = "btnChangeEmail";
             this.btnChangeEmail.Size = new System.Drawing.Size(135, 32);
             this.btnChangeEmail.TabIndex = 4;
@@ -178,51 +182,51 @@ namespace LibraryManagementSystem.UserInterface_Forms
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox2.Location = new System.Drawing.Point(60, 359);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(868, 31);
             this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "UserPassword123";
+            
             this.textBox2.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox5.Location = new System.Drawing.Point(60, 618);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Location = new System.Drawing.Point(62, 640);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(868, 31);
             this.textBox5.TabIndex = 3;
-            this.textBox5.Text = "091234567891";
+     
             this.textBox5.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox4.Location = new System.Drawing.Point(60, 542);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Location = new System.Drawing.Point(62, 564);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(868, 31);
             this.textBox4.TabIndex = 3;
-            this.textBox4.Text = "Prk 1 Address, Tagum City";
+           
             this.textBox4.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox3.Location = new System.Drawing.Point(60, 469);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Location = new System.Drawing.Point(62, 491);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(868, 31);
             this.textBox3.TabIndex = 3;
-            this.textBox3.Text = "UserName";
+            
             this.textBox3.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox1
@@ -230,19 +234,19 @@ namespace LibraryManagementSystem.UserInterface_Forms
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox1.Location = new System.Drawing.Point(60, 289);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(868, 31);
             this.textBox1.TabIndex = 3;
-            this.textBox1.Text = "user.email@gmail.com";
+            
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnRemovePhoto
             // 
             this.btnRemovePhoto.ForeColor = System.Drawing.Color.Black;
             this.btnRemovePhoto.Location = new System.Drawing.Point(480, 53);
-            this.btnRemovePhoto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRemovePhoto.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemovePhoto.Name = "btnRemovePhoto";
             this.btnRemovePhoto.Size = new System.Drawing.Size(129, 44);
             this.btnRemovePhoto.TabIndex = 2;
@@ -254,7 +258,7 @@ namespace LibraryManagementSystem.UserInterface_Forms
             // 
             this.btnUpload.ForeColor = System.Drawing.Color.Black;
             this.btnUpload.Location = new System.Drawing.Point(257, 53);
-            this.btnUpload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpload.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(203, 44);
             this.btnUpload.TabIndex = 2;
@@ -315,7 +319,7 @@ namespace LibraryManagementSystem.UserInterface_Forms
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(53, 583);
+            this.label4.Location = new System.Drawing.Point(55, 605);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 32);
@@ -328,7 +332,7 @@ namespace LibraryManagementSystem.UserInterface_Forms
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(53, 507);
+            this.label13.Location = new System.Drawing.Point(55, 529);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(106, 32);
@@ -354,7 +358,7 @@ namespace LibraryManagementSystem.UserInterface_Forms
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(53, 434);
+            this.label12.Location = new System.Drawing.Point(55, 456);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(132, 32);
@@ -392,7 +396,7 @@ namespace LibraryManagementSystem.UserInterface_Forms
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(53, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(178, 161);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -407,7 +411,7 @@ namespace LibraryManagementSystem.UserInterface_Forms
             this.ClientSize = new System.Drawing.Size(999, 754);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEditProfile";
             this.Text = "frmSettings";
             this.panel1.ResumeLayout(false);
