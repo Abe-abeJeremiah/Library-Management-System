@@ -368,7 +368,7 @@ namespace LibraryManagementSystem.UserInterface_Forms
             // 
             // AmountPaid
             // 
-            this.AmountPaid.HeaderText = "Amount Paid (₱)";
+            this.AmountPaid.HeaderText = "Amount Paid (?)";
             this.AmountPaid.MinimumWidth = 6;
             this.AmountPaid.Name = "AmountPaid";
             this.AmountPaid.ReadOnly = true;
