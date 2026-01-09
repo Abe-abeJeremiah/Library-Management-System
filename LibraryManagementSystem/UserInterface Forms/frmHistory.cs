@@ -159,5 +159,10 @@ namespace LibraryManagementSystem.UserInterface_Forms
         {
 
         }
+
+        private void frmHistory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
