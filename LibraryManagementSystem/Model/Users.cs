@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +15,10 @@ namespace LibraryManagementSystem.Model
          public string PasswordHash { get; set; }
          public DateTime ExpirationDate { get; set; }
          public DateTime RegistrationDate { get; set; }
+
+        public string ProfileImagePath { get; set; }
+        
+
 
     }
 
