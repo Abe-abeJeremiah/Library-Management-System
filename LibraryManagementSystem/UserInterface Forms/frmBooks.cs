@@ -1,13 +1,14 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using LibraryManagementSystem.Model;
+
 
 namespace LibraryManagementSystem.UserInterface_Forms
 {
@@ -16,7 +17,6 @@ namespace LibraryManagementSystem.UserInterface_Forms
         public frmBooks()
         {
             InitializeComponent();
-            LoadBookCards();
         }
 
         private void lblUserName_Click(object sender, EventArgs e)
@@ -26,8 +26,9 @@ namespace LibraryManagementSystem.UserInterface_Forms
 
         private void frmBooks_Load(object sender, EventArgs e)
         {
-           
+            LoadBookCards();
         }
+
         private void LoadBookCards()
         {
             tblBooks.Controls.Clear();
@@ -38,14 +39,17 @@ namespace LibraryManagementSystem.UserInterface_Forms
             int row = 0;
 
             BookRepository repo = new BookRepository();
-            List<LibraryBook> books = repo.GetAllBooks(); // DB data
+            List<LibraryBook> books = repo.GetAllBooks(); // ✅ CORRECT MODEL
 
             foreach (LibraryBook book in books)
             {
                 frmBookControler bookCard = new frmBookControler();
-                bookCard.SetData(book);   // ✅ THIS IS THE FIX
-
+                bookCard.TopLevel = false;
+                bookCard.FormBorderStyle = FormBorderStyle.None;
                 bookCard.Dock = DockStyle.Fill;
+
+                bookCard.SetData(book);
+                bookCard.Show();
 
                 if (col == 0)
                 {
@@ -56,7 +60,7 @@ namespace LibraryManagementSystem.UserInterface_Forms
                 tblBooks.Controls.Add(bookCard, col, row);
 
                 col++;
-                if (col == 2)
+                if (col >= 2)
                 {
                     col = 0;
                     row++;
@@ -64,10 +68,11 @@ namespace LibraryManagementSystem.UserInterface_Forms
             }
         }
 
+        
         private void tblBooks_Paint(object sender, PaintEventArgs e)
         {
-
+            // optional custom drawing
         }
+
     }
 }
-
