@@ -86,22 +86,37 @@ namespace LibraryManagementSystem
                             LoggedInUser.ProfileImagePath = dr["ProfileImagePath"] == DBNull.Value
                                 ? null
                                 : dr["ProfileImagePath"].ToString();
-
                             MessageBox.Show("Login successful!", "Success");
 
-                            UserInterface main = new UserInterface();
-                            main.Show();
                             this.Hide();
-                        }
 
-                        else
-                        {
-                            MessageBox.Show(
-                                "Invalid credentials or account expired.",
-                                "Login Failed",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning
-                            );
+
+
+
+
+
+
+                            // 🔐 ROLE-BASED ACCESS
+                            if (LoggedInUser.Role == "Guest" || LoggedInUser.Role == "User")
+                            {
+                                UserInterface userUI = new UserInterface();
+                                userUI.Show();
+                            }
+                            else if (
+                                LoggedInUser.Role == "Admin" ||
+                                LoggedInUser.Role == "Librarian" ||
+                                LoggedInUser.Role == "Faculty"
+                            )
+                            {
+                                AdminInterface adminUI = new AdminInterface();
+                                adminUI.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Unknown user role.");
+                                this.Show();
+                            }
+
                         }
                     }
                 }
