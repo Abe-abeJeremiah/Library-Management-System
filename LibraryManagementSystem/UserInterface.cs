@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using LibraryManagementSystem.UserInterface_Forms;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.IO;
+
 
 namespace LibraryManagementSystem
 {
@@ -57,6 +61,25 @@ namespace LibraryManagementSystem
             childForm.Show();
         }
 
+
+
+
+        public void RefreshProfileImage()
+        {
+            pictureBox1.Image = Properties.Resources.Screenshot__354_;
+
+            if (!string.IsNullOrEmpty(LoggedInUser.ProfileImagePath) &&
+                File.Exists(LoggedInUser.ProfileImagePath))
+            {
+                using (var bmpTemp = new Bitmap(LoggedInUser.ProfileImagePath))
+                {
+                    pictureBox1.Image = new Bitmap(bmpTemp);
+                }
+            }
+        }
+
+
+
         private void ButtonChecker()
         {
             if (btnDashboard != null) navigationButtons.Add(btnDashboard);
@@ -98,11 +121,40 @@ namespace LibraryManagementSystem
             //Highlight the active button
             btn.BackColor = ActiveColor;
         }
+        private void LoadUserProfile()
+        {
+            // TEXT ONLY (designer controls font & alignment)
+            lblUserName.Text = LoggedInUser.UserName;
+            lblRole.Text = LoggedInUser.Role;
+
+            // IMAGE ONLY (safe load, no layout change)
+            LoadProfileImage();
+        }
 
         private void UserInterface_Load(object sender, EventArgs e)
         {
-
+            LoadUserProfile();
         }
+        private void LoadProfileImage()
+        {
+            pictureBox1.Image?.Dispose();
+
+            if (!string.IsNullOrEmpty(LoggedInUser.ProfileImagePath) &&
+                File.Exists(LoggedInUser.ProfileImagePath))
+            {
+                using (var temp = new Bitmap(LoggedInUser.ProfileImagePath))
+                {
+                    pictureBox1.Image = new Bitmap(temp);
+                }
+            }
+            else
+            {
+                pictureBox1.Image = Properties.Resources.Screenshot__354_;
+            }
+        }
+
+
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -189,14 +241,38 @@ namespace LibraryManagementSystem
         {
             ActivateButton(btnEditProfile);
             lblTitle.Text = "Settings";
+
+            frmEditProfile frm = new frmEditProfile();
+
+            frm.FormClosed += (s, args) =>
+            {
+                // Reload updated user info
+                LoadUserProfile();
+                RefreshProfileImage();
+            };
+
             this.PnlFormLoader.Controls.Clear();
-            frmEditProfile FrmSettings_vrb = new frmEditProfile() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            FrmSettings_vrb.FormBorderStyle = FormBorderStyle.None;
-            this.PnlFormLoader.Controls.Add(FrmSettings_vrb);
-            FrmSettings_vrb.Show();
+            frm.Dock = DockStyle.Fill;
+            frm.TopLevel = false;
+            frm.TopMost = true;
+            frm.FormBorderStyle = FormBorderStyle.None;
+
+            this.PnlFormLoader.Controls.Add(frm);
+            frm.Show();
         }
 
+
         private void PnlFormLoader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRole_Click(object sender, EventArgs e)
         {
 
         }
