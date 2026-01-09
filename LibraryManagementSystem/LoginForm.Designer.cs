@@ -42,7 +42,9 @@ namespace LibraryManagementSystem
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Pdeye = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pdeye)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogin
@@ -50,7 +52,7 @@ namespace LibraryManagementSystem
             this.btnLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(239, 459);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(172, 50);
             this.btnLogin.TabIndex = 0;
@@ -108,7 +110,7 @@ namespace LibraryManagementSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtboxEmailCredentials.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtboxEmailCredentials.Location = new System.Drawing.Point(76, 267);
-            this.txtboxEmailCredentials.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtboxEmailCredentials.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxEmailCredentials.Name = "txtboxEmailCredentials";
             this.txtboxEmailCredentials.Size = new System.Drawing.Size(445, 22);
             this.txtboxEmailCredentials.TabIndex = 5;
@@ -121,7 +123,7 @@ namespace LibraryManagementSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtboxPasswordCredentials.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtboxPasswordCredentials.Location = new System.Drawing.Point(76, 338);
-            this.txtboxPasswordCredentials.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtboxPasswordCredentials.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxPasswordCredentials.MaxLength = 8;
             this.txtboxPasswordCredentials.Name = "txtboxPasswordCredentials";
             this.txtboxPasswordCredentials.Size = new System.Drawing.Size(445, 22);
@@ -164,7 +166,7 @@ namespace LibraryManagementSystem
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chckRememberMe.AutoSize = true;
             this.chckRememberMe.Location = new System.Drawing.Point(89, 405);
-            this.chckRememberMe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chckRememberMe.Margin = new System.Windows.Forms.Padding(4);
             this.chckRememberMe.Name = "chckRememberMe";
             this.chckRememberMe.Size = new System.Drawing.Size(119, 20);
             this.chckRememberMe.TabIndex = 10;
@@ -218,7 +220,7 @@ namespace LibraryManagementSystem
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(597, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(576, 644);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -227,11 +229,24 @@ namespace LibraryManagementSystem
             this.pictureBox1.UseWaitCursor = true;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // Pdeye
+            // 
+            this.Pdeye.BackColor = System.Drawing.Color.Transparent;
+            this.Pdeye.Image = global::LibraryManagementSystem.Properties.Resources.closed_eyes;
+            this.Pdeye.Location = new System.Drawing.Point(482, 338);
+            this.Pdeye.Name = "Pdeye";
+            this.Pdeye.Size = new System.Drawing.Size(39, 22);
+            this.Pdeye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Pdeye.TabIndex = 14;
+            this.Pdeye.TabStop = false;
+            this.Pdeye.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1173, 644);
+            this.Controls.Add(this.Pdeye);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lnkForgotPassword);
@@ -246,13 +261,14 @@ namespace LibraryManagementSystem
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLogin";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Management System";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pdeye)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,6 +289,7 @@ namespace LibraryManagementSystem
         private System.Windows.Forms.LinkLabel lnkForgotPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.PictureBox Pdeye;
     }
 }
 
