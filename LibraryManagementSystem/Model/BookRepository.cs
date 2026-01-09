@@ -1,4 +1,4 @@
-﻿using LibraryManagementSystem.Database;
+using LibraryManagementSystem.Database;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace LibraryManagementSystem.Model
 {
-    public class BookRepository : LibraryBook
+    public class BookRepository 
     {
         public LibraryBook GetBookByISBN(string isbn)
         {
@@ -38,7 +38,8 @@ namespace LibraryManagementSystem.Model
                     Edition = dr["Edition"].ToString(),
                     Language = dr["Language"].ToString(),
                     AvailableCopies = (int)dr["AvailableCopies"],
-                    CoverImage = dr["CoverImage"] as byte[]
+                    BookImagePath = dr["BookImagePath"]?.ToString()
+
                 };
             }
         }
@@ -71,8 +72,11 @@ namespace LibraryManagementSystem.Model
                         Language = dr["Language"].ToString(),
                         PhysicalDescription = dr["PhysicalDescription"].ToString(),
                         AccessionNumber = dr["AccessionNumber"].ToString(),
-                        PublicationYear = (int)dr["PublicationYear"],
-                        AvailableCopies = (int)dr["AvailableCopies"]
+                        PublicationYear = dr["PublicationYear"] == DBNull.Value ? 0 : (int)dr["PublicationYear"],
+                        AvailableCopies = dr["AvailableCopies"] == DBNull.Value ? 0 : (int)dr["AvailableCopies"],
+                        BookImagePath = dr["BookImagePath"]?.ToString()
+
+
                     });
                 }
             }
