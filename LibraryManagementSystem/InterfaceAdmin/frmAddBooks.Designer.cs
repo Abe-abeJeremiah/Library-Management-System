@@ -102,7 +102,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Controls.Add(this.btnUpload);
             this.panel1.Location = new System.Drawing.Point(199, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(607, 689);
             this.panel1.TabIndex = 1;
@@ -111,7 +111,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // dtmPublicationYear
             // 
             this.dtmPublicationYear.Location = new System.Drawing.Point(264, 324);
-            this.dtmPublicationYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtmPublicationYear.Margin = new System.Windows.Forms.Padding(4);
             this.dtmPublicationYear.Name = "dtmPublicationYear";
             this.dtmPublicationYear.Size = new System.Drawing.Size(291, 22);
             this.dtmPublicationYear.TabIndex = 8;
@@ -120,7 +120,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // txtAccessionNumber
             // 
             this.txtAccessionNumber.Location = new System.Drawing.Point(264, 577);
-            this.txtAccessionNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAccessionNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtAccessionNumber.Name = "txtAccessionNumber";
             this.txtAccessionNumber.Size = new System.Drawing.Size(291, 22);
             this.txtAccessionNumber.TabIndex = 7;
@@ -128,7 +128,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // txtPhysicalDescription
             // 
             this.txtPhysicalDescription.Location = new System.Drawing.Point(264, 548);
-            this.txtPhysicalDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhysicalDescription.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhysicalDescription.Name = "txtPhysicalDescription";
             this.txtPhysicalDescription.Size = new System.Drawing.Size(291, 22);
             this.txtPhysicalDescription.TabIndex = 7;
@@ -137,7 +137,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // txtLanguage
             // 
             this.txtLanguage.Location = new System.Drawing.Point(264, 521);
-            this.txtLanguage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLanguage.Margin = new System.Windows.Forms.Padding(4);
             this.txtLanguage.Name = "txtLanguage";
             this.txtLanguage.Size = new System.Drawing.Size(291, 22);
             this.txtLanguage.TabIndex = 7;
@@ -146,7 +146,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // txtEditor
             // 
             this.txtEditor.Location = new System.Drawing.Point(264, 489);
-            this.txtEditor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEditor.Margin = new System.Windows.Forms.Padding(4);
             this.txtEditor.Name = "txtEditor";
             this.txtEditor.Size = new System.Drawing.Size(291, 22);
             this.txtEditor.TabIndex = 7;
@@ -155,7 +155,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // txtLocation
             // 
             this.txtLocation.Location = new System.Drawing.Point(264, 453);
-            this.txtLocation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLocation.Margin = new System.Windows.Forms.Padding(4);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(291, 22);
             this.txtLocation.TabIndex = 7;
@@ -164,7 +164,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // txtEdition
             // 
             this.txtEdition.Location = new System.Drawing.Point(264, 420);
-            this.txtEdition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEdition.Margin = new System.Windows.Forms.Padding(4);
             this.txtEdition.Name = "txtEdition";
             this.txtEdition.Size = new System.Drawing.Size(291, 22);
             this.txtEdition.TabIndex = 7;
@@ -173,7 +173,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // txtPublisher
             // 
             this.txtPublisher.Location = new System.Drawing.Point(264, 385);
-            this.txtPublisher.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPublisher.Margin = new System.Windows.Forms.Padding(4);
             this.txtPublisher.Name = "txtPublisher";
             this.txtPublisher.Size = new System.Drawing.Size(291, 22);
             this.txtPublisher.TabIndex = 7;
@@ -182,7 +182,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // txtCopies
             // 
             this.txtCopies.Location = new System.Drawing.Point(264, 353);
-            this.txtCopies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCopies.Margin = new System.Windows.Forms.Padding(4);
             this.txtCopies.Name = "txtCopies";
             this.txtCopies.Size = new System.Drawing.Size(291, 22);
             this.txtCopies.TabIndex = 7;
@@ -191,7 +191,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // txtISBN
             // 
             this.txtISBN.Location = new System.Drawing.Point(264, 297);
-            this.txtISBN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtISBN.Margin = new System.Windows.Forms.Padding(4);
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(291, 22);
             this.txtISBN.TabIndex = 7;
@@ -200,7 +200,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // txtPages
             // 
             this.txtPages.Location = new System.Drawing.Point(264, 268);
-            this.txtPages.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPages.Margin = new System.Windows.Forms.Padding(4);
             this.txtPages.Name = "txtPages";
             this.txtPages.Size = new System.Drawing.Size(291, 22);
             this.txtPages.TabIndex = 7;
@@ -209,7 +209,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // txtAuthor
             // 
             this.txtAuthor.Location = new System.Drawing.Point(264, 240);
-            this.txtAuthor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAuthor.Margin = new System.Windows.Forms.Padding(4);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(291, 22);
             this.txtAuthor.TabIndex = 7;
@@ -218,7 +218,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // txtSubTitle
             // 
             this.txtSubTitle.Location = new System.Drawing.Point(264, 212);
-            this.txtSubTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSubTitle.Margin = new System.Windows.Forms.Padding(4);
             this.txtSubTitle.Name = "txtSubTitle";
             this.txtSubTitle.Size = new System.Drawing.Size(291, 22);
             this.txtSubTitle.TabIndex = 7;
@@ -227,7 +227,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(264, 182);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(291, 22);
             this.textBox1.TabIndex = 7;
@@ -406,7 +406,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // 
             this.btnAddBook.ForeColor = System.Drawing.Color.Black;
             this.btnAddBook.Location = new System.Drawing.Point(311, 625);
-            this.btnAddBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddBook.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddBook.Name = "btnAddBook";
             this.btnAddBook.Size = new System.Drawing.Size(104, 44);
             this.btnAddBook.TabIndex = 5;
@@ -418,18 +418,19 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // 
             this.btnRemovePhoto.ForeColor = System.Drawing.Color.Black;
             this.btnRemovePhoto.Location = new System.Drawing.Point(412, 60);
-            this.btnRemovePhoto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRemovePhoto.Margin = new System.Windows.Forms.Padding(4);
             this.btnRemovePhoto.Name = "btnRemovePhoto";
             this.btnRemovePhoto.Size = new System.Drawing.Size(104, 44);
             this.btnRemovePhoto.TabIndex = 5;
             this.btnRemovePhoto.Text = "Remove Photo";
             this.btnRemovePhoto.UseVisualStyleBackColor = true;
+            this.btnRemovePhoto.Click += new System.EventHandler(this.btnRemovePhoto_Click);
             // 
             // pcBook
             // 
             this.pcBook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pcBook.Location = new System.Drawing.Point(92, 18);
-            this.pcBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pcBook.Margin = new System.Windows.Forms.Padding(4);
             this.pcBook.Name = "pcBook";
             this.pcBook.Size = new System.Drawing.Size(125, 126);
             this.pcBook.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -440,19 +441,19 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // 
             this.btnClear.ForeColor = System.Drawing.Color.Black;
             this.btnClear.Location = new System.Drawing.Point(164, 625);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(112, 44);
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnUpload_Click);
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnUpload
             // 
             this.btnUpload.ForeColor = System.Drawing.Color.Black;
             this.btnUpload.Location = new System.Drawing.Point(264, 60);
-            this.btnUpload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpload.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(112, 44);
             this.btnUpload.TabIndex = 3;
@@ -468,7 +469,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             this.ClientSize = new System.Drawing.Size(977, 706);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "txtBookTitle";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.txtBookTitle_Load);
