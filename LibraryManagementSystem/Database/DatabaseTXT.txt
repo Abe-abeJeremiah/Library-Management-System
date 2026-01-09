@@ -243,6 +243,23 @@ CREATE TABLE WaiverRequests (
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
+CREATE TABLE ProfileUpdateRequests (
+    RequestID INT IDENTITY PRIMARY KEY,
+    UserID INT NOT NULL,
+
+    NewUserName VARCHAR(100),
+    NewEmail VARCHAR(150),
+    NewAddress VARCHAR(255),
+    NewContact VARCHAR(50),
+    NewProfileImagePath VARCHAR(255),
+
+    Status VARCHAR(20) DEFAULT 'Pending',
+    RequestDate DATETIME DEFAULT GETDATE(),
+
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
+
 
 
 UPDATE Users
