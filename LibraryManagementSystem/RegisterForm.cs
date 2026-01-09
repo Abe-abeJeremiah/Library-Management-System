@@ -21,6 +21,8 @@ namespace LibraryManagementSystem
     public partial class frmRegister : Form
     {
         string cs = ConfigurationManager.ConnectionStrings["LMSdb"].ConnectionString;
+        private bool showPass = false;
+        private bool showConfirm = false;
 
         public frmRegister()
         {
@@ -36,7 +38,10 @@ namespace LibraryManagementSystem
 
         private void RegisterForm_Load(object sender, EventArgs e)
         {
+            txtRegisterPassword.UseSystemPasswordChar = true;
+            picEyePassword.Image = Properties.Resources.closed_eyes;
         }
+
 
         // ===== PASSWORD HASHING =====
         private string HashPassword(string password)
@@ -79,7 +84,7 @@ namespace LibraryManagementSystem
             // ===== PASSWORD VALIDATION =====
             if (password.Length < 5)
             {
-                MessageBox.Show("Password must be at least 5 characters long");
+                MessageBox.Show("Password must be at least 8 characters long");
                 return;
             }
 
@@ -92,7 +97,8 @@ namespace LibraryManagementSystem
                     con.Open();
 
                     // ===== CHECK DUPLICATE USERNAME =====
-                    string checkUser = "SELECT COUNT(*) FROM dbo.Users WHERE username = @username";
+                    string checkUser = "SELECT COUNT(*) FROM dbo.Users WHERE UserName = @username";
+
                     using (SqlCommand cmdUser = new SqlCommand(checkUser, con))
                     {
                         cmdUser.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
@@ -104,7 +110,8 @@ namespace LibraryManagementSystem
                     }
 
                     // ===== CHECK DUPLICATE EMAIL =====
-                    string checkEmail = "SELECT COUNT(*) FROM dbo.Users WHERE email = @email";
+                    string checkEmail = "SELECT COUNT(*) FROM dbo.Users WHERE EmailAddress = @email";
+
                     using (SqlCommand cmdEmail = new SqlCommand(checkEmail, con))
                     {
                         cmdEmail.Parameters.Add("@email", SqlDbType.NVarChar).Value = email;
@@ -117,8 +124,14 @@ namespace LibraryManagementSystem
 
                     // ===== INSERT USER =====
                     string insertQuery = @"
-                        INSERT INTO dbo.Users (username, email, password, role)
-                        VALUES (@username, @email, @password, @role)";
+INSERT INTO dbo.Users
+(UserName, EmailAddress, PasswordHash, MemberType, ExpirationDate, RegistrationDate)
+VALUES
+(@username, @email, @password, @role,
+ DATEADD(YEAR, 1, GETDATE()),
+ GETDATE())";
+
+
 
                     using (SqlCommand cmd = new SqlCommand(insertQuery, con))
                     {
@@ -161,5 +174,31 @@ namespace LibraryManagementSystem
         private void txtUserName_TextChanged(object sender, EventArgs e)
         {
         }
+
+        private void txtRegisterPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void picEyePassword_Click(object sender, EventArgs e)
+        {
+            showPass = !showPass;
+            txtRegisterPassword.UseSystemPasswordChar = !showPass;
+
+            picEyePassword.Image = showPass
+                ? Properties.Resources.eye
+                : Properties.Resources.closed_eyes;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+             showConfirm = !showConfirm;
+            txtConfimPassword.UseSystemPasswordChar = !showConfirm;
+
+            picEyeConfirmPassword.Image = showConfirm
+                ? Properties.Resources.eye
+                : Properties.Resources.closed_eyes;
+        }
     }
-}
+    }
