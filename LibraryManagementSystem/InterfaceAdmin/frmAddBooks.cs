@@ -29,8 +29,13 @@ namespace LibraryManagementSystem.InterfaceAdmin
             {
                 try
                 {
-                    pcBook.Image = Image.FromFile(opnfd.FileName);
-                    imagePath = opnfd.FileName; // 🔹 SAVE PATH
+                    using (var fs = new FileStream(opnfd.FileName, FileMode.Open, FileAccess.Read))
+                    {
+                        pcBook.Image = Image.FromStream(fs);
+                    }
+
+                    imagePath = SaveBookImage(opnfd.FileName);
+                    // 🔹 SAVE PATH
                 }
                 catch (Exception ex)
                 {
@@ -38,6 +43,40 @@ namespace LibraryManagementSystem.InterfaceAdmin
                 }
             }
         }
+        private string SaveBookImage(string sourcePath)
+        {
+            if (string.IsNullOrEmpty(sourcePath))
+                return "";
+
+            // Get the project root (two folders up from bin/Debug/netX)
+            string imagesFolder = Path.Combine(Environment.CurrentDirectory, "BookImages");
+            if (!Directory.Exists(imagesFolder))
+                Directory.CreateDirectory(imagesFolder);
+
+
+
+            //=========FutureImprovement======\\
+
+            //string fullPath = Path.Combine(Application.StartupPath, imagePath);
+            // pcBook.Image = Image.FromFile(fullPath); 
+
+
+                
+
+            string fileName = Guid.NewGuid().ToString() + Path.GetExtension(sourcePath);
+            string destinationPath = Path.Combine(imagesFolder, fileName);
+
+            File.Copy(sourcePath, destinationPath, true);
+
+            // Return relative path for database
+            return Path.Combine("BookImages", fileName);
+
+
+
+
+
+        }
+
 
         // ================= ADD BOOK =================
         private void btnAddBook_Click(object sender, EventArgs e)
@@ -45,6 +84,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             // 🔹 BASIC VALIDATION
             if (string.IsNullOrWhiteSpace(textBox1.Text) ||
                 string.IsNullOrWhiteSpace(txtAuthor.Text))
+
             {
                 MessageBox.Show("Book Title and Author are required.");
                 return;
@@ -52,8 +92,8 @@ namespace LibraryManagementSystem.InterfaceAdmin
 
             try
             {
-                string connStr = ConfigurationManager
-                    .ConnectionStrings["LibraryDB"].ConnectionString;
+                string connStr = ConfigurationManager.ConnectionStrings["LMSdb"].ConnectionString;
+
 
                 using (SqlConnection conn = new SqlConnection(connStr))
                 {
@@ -72,19 +112,27 @@ namespace LibraryManagementSystem.InterfaceAdmin
                     cmd.Parameters.AddWithValue("@Title", textBox1.Text);
                     cmd.Parameters.AddWithValue("@SubTitle", txtSubTitle.Text);
                     cmd.Parameters.AddWithValue("@Author", txtAuthor.Text);
-                    cmd.Parameters.AddWithValue("@Pages", int.TryParse(txtPages.Text, out int p) ? p : 0);
+                    cmd.Parameters.Add("@Pages", SqlDbType.Int).Value = int.TryParse(txtPages.Text, out int p) ? p : 0;
                     cmd.Parameters.AddWithValue("@ISBN", txtISBN.Text);
                     cmd.Parameters.AddWithValue("@Location", txtLocation.Text);
                     cmd.Parameters.AddWithValue("@Editor", txtEditor.Text);
                     cmd.Parameters.AddWithValue("@AccessionNumber", txtAccessionNumber.Text);
                     cmd.Parameters.AddWithValue("@PhysicalDescription", txtPhysicalDescription.Text);
                     cmd.Parameters.AddWithValue("@Publisher", txtPublisher.Text);
-                    cmd.Parameters.AddWithValue("@PublicationYear", dtmPublicationYear.Value.Year);
+                    cmd.Parameters.Add("@PublicationYear", SqlDbType.Int).Value = dtmPublicationYear.Value.Year;
                     cmd.Parameters.AddWithValue("@Edition", txtEdition.Text);
                     cmd.Parameters.AddWithValue("@Language", txtLanguage.Text);
-                    cmd.Parameters.AddWithValue("@AvailableCopies",
-                        int.TryParse(txtCopies.Text, out int c) ? c : 1);
-                    cmd.Parameters.AddWithValue("@BookImagePath", imagePath);
+                    cmd.Parameters.Add("@AvailableCopies", SqlDbType.Int).Value = int.TryParse(txtCopies.Text, out int c) ? c : 1;
+
+                    if (!string.IsNullOrEmpty(imagePath) && !File.Exists(Path.Combine(Environment.CurrentDirectory, imagePath)))
+                    {
+                        imagePath = null;
+                    }
+
+
+                    cmd.Parameters.AddWithValue("@BookImagePath",
+                    string.IsNullOrEmpty(imagePath) ? (object)DBNull.Value : imagePath);
+
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -103,6 +151,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
 
         // ================= CLEAR FORM =================
         private void btnClear_Click(object sender, EventArgs e)
@@ -127,6 +176,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             txtCopies.Clear();
             pcBook.Image = null;
             imagePath = "";
+            dtmPublicationYear.Value = DateTime.Now;
         }
 
         // ================= UNUSED EVENTS (SAFE TO KEEP) =================
@@ -146,5 +196,12 @@ namespace LibraryManagementSystem.InterfaceAdmin
         private void textBox10_TextChanged(object sender, EventArgs e) { }
         private void textBox11_TextChanged(object sender, EventArgs e) { }
         private void txtBookTitle_Load(object sender, EventArgs e) { }
+
+        private void btnRemovePhoto_Click(object sender, EventArgs e)
+        {
+            pcBook.Image = null;
+            imagePath = "";
+        }
+
     }
 }
