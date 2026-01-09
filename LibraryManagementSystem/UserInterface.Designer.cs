@@ -1,4 +1,4 @@
-﻿namespace LibraryManagementSystem
+namespace LibraryManagementSystem
 {
     partial class UserInterface
     {
@@ -60,8 +60,9 @@
             this.pnlNav.Controls.Add(this.PanelUser);
             this.pnlNav.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlNav.Location = new System.Drawing.Point(0, 0);
+            this.pnlNav.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(186, 700);
+            this.pnlNav.Size = new System.Drawing.Size(248, 862);
             this.pnlNav.TabIndex = 0;
             this.pnlNav.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNav_Paint);
             // 
@@ -73,9 +74,10 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.Red;
-            this.btnLogout.Location = new System.Drawing.Point(0, 658);
+            this.btnLogout.Location = new System.Drawing.Point(0, 810);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(186, 42);
+            this.btnLogout.Size = new System.Drawing.Size(248, 52);
             this.btnLogout.TabIndex = 1;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -88,9 +90,10 @@
             this.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditProfile.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnEditProfile.Location = new System.Drawing.Point(0, 344);
+            this.btnEditProfile.Location = new System.Drawing.Point(0, 450);
+            this.btnEditProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditProfile.Name = "btnEditProfile";
-            this.btnEditProfile.Size = new System.Drawing.Size(186, 50);
+            this.btnEditProfile.Size = new System.Drawing.Size(248, 62);
             this.btnEditProfile.TabIndex = 1;
             this.btnEditProfile.Text = "Edit Profile";
             this.btnEditProfile.UseVisualStyleBackColor = true;
@@ -103,9 +106,10 @@
             this.btnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistory.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnHistory.Location = new System.Drawing.Point(0, 294);
+            this.btnHistory.Location = new System.Drawing.Point(0, 388);
+            this.btnHistory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(186, 50);
+            this.btnHistory.Size = new System.Drawing.Size(248, 62);
             this.btnHistory.TabIndex = 1;
             this.btnHistory.Text = "History";
             this.btnHistory.UseVisualStyleBackColor = true;
@@ -118,9 +122,10 @@
             this.btnFines.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFines.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFines.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnFines.Location = new System.Drawing.Point(0, 244);
+            this.btnFines.Location = new System.Drawing.Point(0, 326);
+            this.btnFines.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFines.Name = "btnFines";
-            this.btnFines.Size = new System.Drawing.Size(186, 50);
+            this.btnFines.Size = new System.Drawing.Size(248, 62);
             this.btnFines.TabIndex = 1;
             this.btnFines.Text = "Fines";
             this.btnFines.UseVisualStyleBackColor = true;
@@ -133,9 +138,10 @@
             this.btnBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBooks.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBooks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnBooks.Location = new System.Drawing.Point(0, 194);
+            this.btnBooks.Location = new System.Drawing.Point(0, 264);
+            this.btnBooks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBooks.Name = "btnBooks";
-            this.btnBooks.Size = new System.Drawing.Size(186, 50);
+            this.btnBooks.Size = new System.Drawing.Size(248, 62);
             this.btnBooks.TabIndex = 1;
             this.btnBooks.Text = "Books";
             this.btnBooks.UseVisualStyleBackColor = true;
@@ -148,9 +154,10 @@
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnDashboard.Location = new System.Drawing.Point(0, 144);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 202);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(186, 50);
+            this.btnDashboard.Size = new System.Drawing.Size(248, 62);
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = true;
@@ -163,8 +170,9 @@
             this.PanelUser.Controls.Add(this.pictureBox1);
             this.PanelUser.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelUser.Location = new System.Drawing.Point(0, 0);
+            this.PanelUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PanelUser.Name = "PanelUser";
-            this.PanelUser.Size = new System.Drawing.Size(186, 144);
+            this.PanelUser.Size = new System.Drawing.Size(248, 202);
             this.PanelUser.TabIndex = 0;
             // 
             // lblRole
@@ -172,42 +180,50 @@
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
-            this.lblRole.Location = new System.Drawing.Point(65, 112);
+            this.lblRole.Location = new System.Drawing.Point(88, 138);
+            this.lblRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(51, 13);
+            this.lblRole.Size = new System.Drawing.Size(64, 17);
             this.lblRole.TabIndex = 1;
             this.lblRole.Text = "Student";
+            this.lblRole.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblRole.Click += new System.EventHandler(this.lblRole_Click);
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
-            this.lblUserName.Location = new System.Drawing.Point(50, 96);
+            this.lblUserName.Location = new System.Drawing.Point(67, 118);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(85, 16);
+            this.lblUserName.Size = new System.Drawing.Size(103, 20);
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "User Name";
+            this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblUserName.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LibraryManagementSystem.Properties.Resources.Screenshot__354_;
-            this.pictureBox1.Location = new System.Drawing.Point(60, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(80, 27);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 63);
+            this.pictureBox1.Size = new System.Drawing.Size(84, 78);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.lblTitle.Location = new System.Drawing.Point(192, 9);
+            this.lblTitle.Location = new System.Drawing.Point(256, 11);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(186, 38);
+            this.lblTitle.Size = new System.Drawing.Size(232, 48);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Dashboard";
             // 
@@ -218,10 +234,11 @@
             this.txtSearchBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.txtSearchBox.Location = new System.Drawing.Point(631, 31);
+            this.txtSearchBox.Location = new System.Drawing.Point(841, 38);
+            this.txtSearchBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearchBox.Multiline = true;
             this.txtSearchBox.Name = "txtSearchBox";
-            this.txtSearchBox.Size = new System.Drawing.Size(292, 20);
+            this.txtSearchBox.Size = new System.Drawing.Size(389, 25);
             this.txtSearchBox.TabIndex = 2;
             this.txtSearchBox.Text = "Search For Something?";
             // 
@@ -231,9 +248,10 @@
             this.btnX.FlatAppearance.BorderSize = 0;
             this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnX.ForeColor = System.Drawing.Color.White;
-            this.btnX.Location = new System.Drawing.Point(910, 0);
+            this.btnX.Location = new System.Drawing.Point(1213, 0);
+            this.btnX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnX.Name = "btnX";
-            this.btnX.Size = new System.Drawing.Size(25, 25);
+            this.btnX.Size = new System.Drawing.Size(33, 31);
             this.btnX.TabIndex = 3;
             this.btnX.Text = "X";
             this.btnX.UseVisualStyleBackColor = true;
@@ -242,18 +260,19 @@
             // PnlFormLoader
             // 
             this.PnlFormLoader.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PnlFormLoader.Location = new System.Drawing.Point(186, 87);
+            this.PnlFormLoader.Location = new System.Drawing.Point(248, 108);
+            this.PnlFormLoader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PnlFormLoader.Name = "PnlFormLoader";
-            this.PnlFormLoader.Size = new System.Drawing.Size(749, 613);
+            this.PnlFormLoader.Size = new System.Drawing.Size(999, 754);
             this.PnlFormLoader.TabIndex = 4;
             this.PnlFormLoader.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlFormLoader_Paint);
             // 
             // UserInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(935, 700);
+            this.ClientSize = new System.Drawing.Size(1247, 862);
             this.Controls.Add(this.PnlFormLoader);
             this.Controls.Add(this.btnX);
             this.Controls.Add(this.txtSearchBox);
@@ -261,6 +280,7 @@
             this.Controls.Add(this.pnlNav);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UserInterface";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library System";
