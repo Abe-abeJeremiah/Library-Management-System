@@ -330,6 +330,7 @@ namespace LibraryManagementSystem.UserInterface_Forms
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHistory";
             this.Text = "frmHistory";
+            this.Load += new System.EventHandler(this.frmHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdDashboard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
