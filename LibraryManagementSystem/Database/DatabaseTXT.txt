@@ -56,8 +56,9 @@ ADD BookImagePath VARCHAR(255);
 
 ALTER TABLE Books ADD Category VARCHAR(100);
 
+ALTER TABLE Books
+ADD Status VARCHAR(50) NOT NULL DEFAULT 'Available';
 
-GO
 
 CREATE INDEX idx_books_title ON Books(Title);
 CREATE INDEX idx_books_author ON Books(Author);
@@ -175,6 +176,16 @@ CREATE TABLE Fines (
     FOREIGN KEY (UserID) REFERENCES Users(UserID),
     FOREIGN KEY (BorrowID) REFERENCES BookBorrow(BorrowID)
 );
+ALTER TABLE Fines ADD IsLost BIT DEFAULT 0;
+ALTER TABLE Fines
+ADD RemainingAmount DECIMAL(10,2);
+
+UPDATE Fines
+SET RemainingAmount = FineAmount
+WHERE RemainingAmount IS NULL;
+
+
+
 
 
 CREATE TABLE Payments (
@@ -266,10 +277,18 @@ UPDATE Users
 SET MemberType = 'Admin'
 WHERE UserName = 'Admin';
 
-select * from dbo.FineWaivers; 
+select * from dbo.Users; 
 
 
 
 SELECT COLUMN_NAME
 FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_NAME = 'Payments';
+WHERE TABLE_NAME = 'Books';
+SELECT * FROM BookBorrow
+
+
+-- Check Fines table
+SELECT TOP 1 * FROM Fines;
+
+-- Check Payments table
+SELECT TOP 1 * FROM Payments;
