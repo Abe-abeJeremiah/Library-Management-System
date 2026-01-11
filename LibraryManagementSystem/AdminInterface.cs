@@ -8,12 +8,22 @@ namespace LibraryManagementSystem
 {
     public partial class AdminInterface : Form
     {
-        
-        // OPTIONAL: keep default constructor if designer complains
+        // Optional: keep default constructor if designer complains
         public AdminInterface()
         {
             InitializeComponent();
+            // Designer-friendly; no logged-in user supplied
+            LoggedInUser = null;
         }
+
+        // Overload to allow passing the current logged-in user instance
+        public AdminInterface(dynamic loggedInUser) : this()
+        {
+            LoggedInUser = loggedInUser;
+        }
+
+        // Instance property (dynamic) to shadow any type named LoggedInUser and hold the current user
+        private dynamic LoggedInUser { get; set; }
 
         // ✅ load username, role, and profile image
         private void AdminInterface_Load(object sender, EventArgs e)
@@ -23,10 +33,46 @@ namespace LibraryManagementSystem
 
         private void LoadUserInfo()
         {
-            lblUserName.Text = LoggedInUser.UserName;
-            lblRole.Text = LoggedInUser.Role;
+            // Safe access: if no user supplied, show defaults
+            var user = LoggedInUser;
+            if (user == null)
+            {
+                lblUserName.Text = string.Empty;
+                lblRole.Text = string.Empty;
+                LoadProfileImage(null);
+                return;
+            }
 
-            LoadProfileImage(LoggedInUser.ProfileImagePath);
+            // Use dynamic properties with fallback to avoid runtime exceptions if properties missing or null
+            try
+            {
+                lblUserName.Text = user.UserName ?? string.Empty;
+            }
+            catch
+            {
+                lblUserName.Text = string.Empty;
+            }
+
+            try
+            {
+                lblRole.Text = user.Role ?? string.Empty;
+            }
+            catch
+            {
+                lblRole.Text = string.Empty;
+            }
+
+            string profileImagePath = null;
+            try
+            {
+                profileImagePath = user.ProfileImagePath;
+            }
+            catch
+            {
+                profileImagePath = null;
+            }
+
+            LoadProfileImage(profileImagePath);
         }
 
 

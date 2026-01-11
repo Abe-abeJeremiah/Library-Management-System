@@ -170,6 +170,7 @@
     <Compile Include="Model\Book.cs" />
     <Compile Include="Model\BookRepository.cs" />
     <Compile Include="Model\BorrowService.cs" />
+    <Compile Include="Model\LoggedInUser.cs" />
     <Compile Include="Model\UserFunction.cs" />
     <Compile Include="Model\LibraryRules.cs" />
     <Compile Include="Model\UserRepository.cs" />

@@ -15,6 +15,9 @@ namespace LibraryManagementSystem
             ConfigurationManager.ConnectionStrings["LMSdb"].ConnectionString;
         private bool showLoginPassword = false;
 
+        // Use the LoggedInUser type from loggedinuser.cs as an instance
+        private LoggedInUser loggedInUser = new LoggedInUser();
+
 
         public FrmLogin()
         {
@@ -80,32 +83,24 @@ namespace LibraryManagementSystem
 
                         if (dr.Read())
                         {
-                            LoggedInUser.UserID = Convert.ToInt32(dr["UserID"]);
-                            LoggedInUser.UserName = dr["UserName"].ToString();
-                            LoggedInUser.Role = dr["MemberType"].ToString();
-                            LoggedInUser.ProfileImagePath = dr["ProfileImagePath"] == DBNull.Value
-                                ? null
-                                : dr["ProfileImagePath"].ToString();
+                            // Populate the LoggedInUser instance using its helper so the class
+                            // can set its own (possibly non-public) property setters.
+                            loggedInUser.LoadFromRecord(dr);
+
                             MessageBox.Show("Login successful!", "Success");
 
                             this.Hide();
 
-
-
-
-
-
-
-                            // 🔐 ROLE-BASED ACCESS
-                            if (LoggedInUser.Role == "Guest" || LoggedInUser.Role == "User")
+                            // 🔐 ROLE-BASED ACCESS using the instance
+                            if (loggedInUser.Role == "Guest" || loggedInUser.Role == "User")
                             {
                                 UserInterface userUI = new UserInterface();
                                 userUI.Show();
                             }
                             else if (
-                                LoggedInUser.Role == "Admin" ||
-                                LoggedInUser.Role == "Librarian" ||
-                                LoggedInUser.Role == "Faculty"
+                                loggedInUser.Role == "Admin" ||
+                                loggedInUser.Role == "Librarian" ||
+                                loggedInUser.Role == "Faculty"
                             )
                             {
                                 AdminInterface adminUI = new AdminInterface();
