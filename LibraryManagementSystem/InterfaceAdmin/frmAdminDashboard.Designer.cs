@@ -33,16 +33,12 @@ namespace LibraryManagementSystem.InterfaceAdmin
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.chartDashboard = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.dgvRecentBorrow = new System.Windows.Forms.DataGridView();
             this.PanelUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartDashboard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRecentBorrow)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelUser
@@ -204,27 +200,6 @@ namespace LibraryManagementSystem.InterfaceAdmin
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
-            // chartDashboard
-            // 
-            this.chartDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.chartDashboard.Location = new System.Drawing.Point(16, 208);
-            this.chartDashboard.Name = "chartDashboard";
-            this.chartDashboard.Size = new System.Drawing.Size(909, 170);
-            this.chartDashboard.TabIndex = 3;
-            // 
-            // dgvRecentBorrow
-            // 
-            this.dgvRecentBorrow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvRecentBorrow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.dgvRecentBorrow.ColumnHeadersHeight = 29;
-            this.dgvRecentBorrow.Location = new System.Drawing.Point(16, 385);
-            this.dgvRecentBorrow.Name = "dgvRecentBorrow";
-            this.dgvRecentBorrow.ReadOnly = true;
-            this.dgvRecentBorrow.RowHeadersVisible = false;
-            this.dgvRecentBorrow.RowHeadersWidth = 51;
-            this.dgvRecentBorrow.Size = new System.Drawing.Size(909, 177);
-            this.dgvRecentBorrow.TabIndex = 4;
-            // 
             // frmAdminDashboard
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
@@ -232,8 +207,6 @@ namespace LibraryManagementSystem.InterfaceAdmin
             this.Controls.Add(this.PanelUser);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.chartDashboard);
-            this.Controls.Add(this.dgvRecentBorrow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAdminDashboard";
             this.Load += new System.EventHandler(this.frmAdminDashboard_Load);
@@ -243,8 +216,6 @@ namespace LibraryManagementSystem.InterfaceAdmin
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartDashboard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRecentBorrow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,8 +242,5 @@ namespace LibraryManagementSystem.InterfaceAdmin
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartDashboard;
-        private System.Windows.Forms.DataGridView dgvRecentBorrow;
     }
 }

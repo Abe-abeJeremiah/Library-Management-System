@@ -4,13 +4,15 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
+using Charting = System.Windows.Forms.DataVisualization.Charting;
 
 namespace LibraryManagementSystem.InterfaceAdmin
 {
     public partial class frmAdminDashboard : Form
     {
-   
+        // We'll create these programmatically to avoid conflicts with any local Chart type.
+        private Charting.Chart chartDashboard;
+        private DataGridView dgvRecentBorrow;
 
         public frmAdminDashboard()
         {
@@ -24,7 +26,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             LoadDashboardCounts();
             LoadAdminInfo();
             LoadChartData();
-            
+            LoadRecentBorrow();
         }
 
         // ================= ADMIN INFO =================
@@ -110,7 +112,7 @@ namespace LibraryManagementSystem.InterfaceAdmin
             }
 
             chartDashboard.Series.Add(series);
-        }
+        } */
 
 
         // ================= TABLE =================

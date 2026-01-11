@@ -22,7 +22,7 @@ namespace LibraryManagementSystem.Index_Forms
             FrmLogin login = new FrmLogin();
             login.Show();
 
-            this.Hide();
+
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -30,7 +30,12 @@ namespace LibraryManagementSystem.Index_Forms
             frmRegister register = new frmRegister();
             register.Show();
 
-            this.Hide();
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

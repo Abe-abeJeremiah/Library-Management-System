@@ -232,7 +232,7 @@ namespace LibraryManagementSystem
             // Pdeye
             // 
             this.Pdeye.BackColor = System.Drawing.Color.Transparent;
-            this.Pdeye.Image = global::LibraryManagementSystem.Properties.Resources.closed_eyes;
+       //     this.Pdeye.Image = global::LibraryManagementSystem.Properties.Resources.closed_eyes;
             this.Pdeye.Location = new System.Drawing.Point(482, 338);
             this.Pdeye.Name = "Pdeye";
             this.Pdeye.Size = new System.Drawing.Size(39, 22);

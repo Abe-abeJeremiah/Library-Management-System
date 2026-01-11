@@ -87,5 +87,10 @@ namespace LibraryManagementSystem
         {
 
         }
+
+        private void pnlTop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

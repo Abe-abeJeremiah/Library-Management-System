@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
+// using System.Windows.Forms.DataVisualization.Charting;
 
 
 namespace LibraryManagementSystem.UserInterface_Forms
@@ -22,10 +22,10 @@ namespace LibraryManagementSystem.UserInterface_Forms
         private void frmDashboard_Load(object sender, EventArgs e)
         {
             LoadDashboardCounts();
-            LoadBooks();
-            LoadBorrowReturnChart();
-            LoadMonthlyBorrowChart();
-            LoadFinesSummary();
+            //  LoadBooks();
+            // LoadBorrowReturnChart();
+            //   LoadMonthlyBorrowChart();
+            //   LoadFinesSummary();
         }
 
         // ================================
@@ -60,6 +60,8 @@ namespace LibraryManagementSystem.UserInterface_Forms
 
             }
         }
+
+        /*
         private void LoadBorrowReturnChart()
         {
             chartDashboard.Series.Clear();
@@ -217,5 +219,6 @@ namespace LibraryManagementSystem.UserInterface_Forms
         {
 
         }
+        */
     }
 }

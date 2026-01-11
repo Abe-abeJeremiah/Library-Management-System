@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagementSystem.InterfaceAdmin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace LibraryManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IndexForm());
+            // Application.Run(new IndexForm());
+           Application.Run(new frmAdminDashboard());
 
         }
     }
