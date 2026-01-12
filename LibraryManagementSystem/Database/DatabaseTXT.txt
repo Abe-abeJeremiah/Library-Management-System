@@ -24,6 +24,10 @@ ALTER TABLE Users
 ADD   Address VARCHAR(255),
     Contact VARCHAR(50),
     ProfileImagePath VARCHAR(255);
+
+    ALTER TABLE Users
+ADD Status VARCHAR(20) NOT NULL DEFAULT 'Pending';
+
 GO
 
 
@@ -63,6 +67,19 @@ ADD Status VARCHAR(50) NOT NULL DEFAULT 'Available';
 CREATE INDEX idx_books_title ON Books(Title);
 CREATE INDEX idx_books_author ON Books(Author);
 GO
+
+
+CREATE TABLE BookActivityLogs (
+    LogID INT IDENTITY PRIMARY KEY,
+    BookID INT NOT NULL,
+    AdminID INT NOT NULL,
+    Action VARCHAR(50) NOT NULL, -- Added / Updated / Deleted
+    ActionDate DATETIME DEFAULT GETDATE(),
+
+    FOREIGN KEY (BookID) REFERENCES Books(BookID),
+    FOREIGN KEY (AdminID) REFERENCES Users(UserID)
+);
+
 
 /* ================================
    BOOK BORROW
@@ -212,6 +229,9 @@ ALTER TABLE Payments
 ADD CONSTRAINT FK_Payments_OtherCharges
 FOREIGN KEY (OtherChargeID) REFERENCES OtherCharges(OtherChargeID);
 
+ALTER TABLE Payments
+ADD ProofImagePath VARCHAR(255),
+    GCashReference VARCHAR(50);
 
 
 
@@ -270,6 +290,16 @@ CREATE TABLE ProfileUpdateRequests (
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
+CREATE TABLE OfficialReceipts (
+    ReceiptID INT IDENTITY PRIMARY KEY,
+    PaymentID INT NOT NULL,
+    ReceiptNumber VARCHAR(50) UNIQUE,
+    IssuedBy INT NOT NULL,
+    IssuedDate DATETIME DEFAULT GETDATE(),
+
+    FOREIGN KEY (PaymentID) REFERENCES Payments(PaymentID),
+    FOREIGN KEY (IssuedBy) REFERENCES Users(UserID)
+);
 
 
 
@@ -278,17 +308,90 @@ SET MemberType = 'Admin'
 WHERE UserName = 'Admin';
 
 select * from dbo.Users; 
+SELECT * FROM BookBorrow;
+
+
+SELECT
+    br.BorrowID,
+    br.UserID,
+    br.BookID
+FROM BookBorrow br;
+
+
+SELECT
+    u.UserName,
+    b.Title,
+    br.BorrowDate
+FROM BookBorrow br
+LEFT JOIN Users u ON br.UserID = u.UserID
+LEFT JOIN Books b ON br.BookID = b.BookID;
+
+
+
+SELECT * FROM Users;
+SELECT * FROM BookBorrow;
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
 
 
 
 SELECT COLUMN_NAME
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'Books';
-SELECT * FROM BookBorrow
+
+
+SELECT * FROM BookReservation;
 
 
 -- Check Fines table
 SELECT TOP 1 * FROM Fines;
 
+
+
 -- Check Payments table
-SELECT TOP 1 * FROM Payments;
+SELECT * FROM users;
+
+UPDATE Users
+SET Status = 'Active'
+WHERE UserName = 'Admin';
+
+
+SELECT TOP 1 * FROM OtherCharges;
+
+
+SELECT 
+    PaymentID,
+    FineID,
+    UserID,
+    AmountPaid,
+    Status,
+    PaymentDate
+FROM Payments;
+
+UPDATE Payments
+SET Status = 'Pending'
+WHERE PaymentID =  3;
+
+
+
+UPDATE Fines
+SET RemainingAmount = FineAmount,
+    IsCleared = 0
+WHERE FineID = (
+    SELECT FineID FROM Payments WHERE PaymentID = 3
+);
+
+ALTER TABLE Payments
+DROP COLUMN ProofImage;
+
+SELECT * FROM Payments;
+
+
+
+
