@@ -392,6 +392,10 @@ DROP COLUMN ProofImage;
 
 SELECT * FROM Payments;
 
+SELECT Status, COUNT(*)
+FROM BookBorrow
+GROUP BY  Status
+
 
 
 
